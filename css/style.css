@@ -1,69 +1,48 @@
 /* ============================================================
-   DORAMABOX - DESIGN SYSTEM & ESTILOS PREMIUM
-   Estética: White Moderno, Luxo, Detalhes em Rosa & Roxo
-   Otimizado para: Celular Android, Tablet e Computador
+   DORAMABOX - FORMATO CELULAR ANDROID (MOBILE-FIRST APP DESIGN)
+   Visual: White Moderno, Luxo, Detalhes em Rosa & Roxo
+   Formato: Interface de Celular (Mobile App Frame)
    ============================================================ */
 
 :root {
-  /* Paleta de Cores Premium */
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F8FAFC;
-  --bg-tertiary: #F1F5F9;
+  --bg-app: #FFFFFF;
+  --bg-page: #F1F5F9;
   --bg-card: #FFFFFF;
-  --bg-glass: rgba(255, 255, 255, 0.85);
-
-  /* Acentos Rosa & Roxo DoramaBox */
+  --bg-soft: #F8FAFC;
+  
   --pink-primary: #EC4899;
   --pink-hover: #DB2777;
   --pink-light: #FDF2F8;
-  --pink-soft: rgba(236, 72, 153, 0.12);
+  --pink-glow: rgba(236, 72, 153, 0.25);
   
   --purple-primary: #8B5CF6;
   --purple-hover: #7C3AED;
-  --purple-dark: #6D28D9;
   --purple-light: #F5F3FF;
-  --purple-soft: rgba(139, 92, 246, 0.12);
-
-  /* Gradientes de Assinatura */
+  
   --gradient-brand: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);
-  --gradient-brand-subtle: linear-gradient(135deg, rgba(236, 72, 153, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
   --gradient-cta: linear-gradient(135deg, #F43F5E 0%, #EC4899 45%, #8B5CF6 100%);
-  --gradient-text: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);
+  --gradient-soft: linear-gradient(135deg, rgba(236, 72, 153, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
 
-  /* Cores de Texto */
   --text-primary: #0F172A;
   --text-secondary: #475569;
   --text-muted: #64748B;
-  --text-light: #94A3B8;
   --text-white: #FFFFFF;
 
-  /* Suporte WhatsApp Oficial */
   --whatsapp-color: #25D366;
   --whatsapp-hover: #20BD5A;
-  --whatsapp-shadow: rgba(37, 211, 102, 0.35);
 
-  /* Bordas e Sombras */
   --border-light: #E2E8F0;
   --border-brand: rgba(236, 72, 153, 0.25);
-  --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.04);
-  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
-  --shadow-lg: 0 16px 36px -4px rgba(236, 72, 153, 0.16), 0 8px 16px -6px rgba(139, 92, 246, 0.12);
-  --shadow-cta: 0 10px 25px -3px rgba(236, 72, 153, 0.45);
-
-  /* Tipografia */
-  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-
-  /* Dimensões e Layout */
-  --container-max: 1200px;
+  
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
-  --radius-xl: 28px;
   --radius-full: 9999px;
+
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Reset Global */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -71,1348 +50,586 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-}
-
 body {
   font-family: var(--font-body);
-  background-color: var(--bg-primary);
+  background-color: var(--bg-page);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.5;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Imagens responsivas */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
-}
-
-/* Container Centralizador */
-.container {
-  width: 100%;
-  max-width: var(--container-max);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-/* Top Announcement Banner */
-.top-banner {
-  background: var(--gradient-brand);
-  color: var(--text-white);
-  padding: 8px 16px;
-  text-align: center;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+/* ============================================================
+   CONTAINER FORMATO CELULAR (MOBILE APP SHELL)
+   Em telas grandes: centralizado como um celular moderno
+   Em telas mobile: 100% da tela nativa
+   ============================================================ */
+.mobile-app-wrapper {
+  max-width: 480px;
+  margin: 0 auto;
+  background-color: var(--bg-app);
+  min-height: 100vh;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
   position: relative;
-  z-index: 50;
+  display: flex;
+  flex-direction: column;
 }
 
-.top-banner span.badge-pill {
-  background: rgba(255, 255, 255, 0.25);
-  padding: 2px 8px;
-  border-radius: var(--radius-full);
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
+@media (min-width: 520px) {
+  body {
+    padding: 24px 0 40px;
+    background: radial-gradient(circle at 50% 20%, rgba(236, 72, 153, 0.08) 0%, transparent 60%),
+                radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 60%),
+                #EDF2F7;
+  }
+  .mobile-app-wrapper {
+    border-radius: 36px;
+    border: 4px solid #FFFFFF;
+    outline: 1px solid rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
 }
 
-/* Header & Navegação */
-.header {
+/* Barra Superior Estilo Celular (Status Bar + App Header) */
+.mobile-app-header {
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-light);
-  z-index: 100;
-  transition: all 0.3s ease;
-}
-
-.header-container {
+  padding: 12px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  z-index: 100;
 }
 
-.brand-logo {
+.mobile-brand {
   display: flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
+}
+
+.mobile-brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px var(--pink-glow);
+}
+
+.mobile-brand-title {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--text-primary);
+  line-height: 1;
 }
 
-.brand-logo img {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(236, 72, 153, 0.25);
-}
-
-.brand-logo .brand-highlight {
-  background: var(--gradient-text);
+.mobile-brand-title span {
+  background: var(--gradient-brand);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.nav-link {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  transition: color 0.2s;
-  padding: 6px 10px;
-  border-radius: var(--radius-sm);
-}
-
-.nav-link:hover {
-  color: var(--pink-primary);
-}
-
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-/* Botões Principais */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 12px 24px;
-  border-radius: var(--radius-full);
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  border: none;
-  text-align: center;
-}
-
-.btn-primary {
-  background: var(--gradient-cta);
-  color: var(--text-white);
-  box-shadow: var(--shadow-cta);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px -4px rgba(236, 72, 153, 0.55);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
-}
-
-.btn-lg {
-  padding: 16px 32px;
-  font-size: 1.1rem;
-}
-
-.btn-secondary {
-  background: var(--bg-tertiary);
-  color: var(--text-primary);
-  border: 1px solid var(--border-light);
-}
-
-.btn-secondary:hover {
-  background: #E2E8F0;
-  color: var(--text-primary);
-}
-
-.btn-outline-brand {
-  background: transparent;
-  color: var(--pink-primary);
-  border: 2px solid var(--pink-primary);
-}
-
-.btn-outline-brand:hover {
-  background: var(--pink-soft);
-  border-color: var(--pink-hover);
-}
-
-.btn-whatsapp {
-  background-color: var(--whatsapp-color);
-  color: #FFFFFF;
-  box-shadow: 0 8px 20px var(--whatsapp-shadow);
-}
-
-.btn-whatsapp:hover {
-  background-color: var(--whatsapp-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px var(--whatsapp-shadow);
-}
-
-/* Hero Section */
-.hero-section {
-  padding: 60px 0 40px;
-  position: relative;
-  overflow: hidden;
-  background: radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
-              radial-gradient(circle at 20% 60%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
-              var(--bg-primary);
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  align-items: center;
-  gap: 40px;
-}
-
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.hero-badge-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+.mobile-badge-top {
   background: var(--pink-light);
   color: var(--pink-primary);
-  border: 1px solid rgba(236, 72, 153, 0.2);
-  padding: 6px 16px;
+  border: 1px solid rgba(236, 72, 153, 0.25);
+  padding: 4px 10px;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
-  font-weight: 700;
-  width: fit-content;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.hero-title {
-  font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-size: 0.72rem;
   font-weight: 800;
-  line-height: 1.15;
-  color: var(--text-primary);
-  letter-spacing: -0.02em;
-}
-
-.hero-subtitle {
-  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-  color: var(--text-secondary);
-  line-height: 1.6;
-  max-width: 580px;
-}
-
-/* Destaque Promocional Obrigatório */
-.promo-callout-card {
-  background: var(--gradient-brand-subtle);
-  border: 1.5px solid var(--border-brand);
-  border-radius: var(--radius-lg);
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  box-shadow: var(--shadow-sm);
-  margin-top: 4px;
-}
-
-.promo-callout-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
-  background: var(--gradient-brand);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 1.4rem;
-  flex-shrink: 0;
-}
-
-.promo-callout-text h3 {
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--pink-primary);
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
 
-.promo-callout-text p {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  font-weight: 500;
-}
-
-/* Hero CTA Wrapper */
-.hero-cta-group {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 14px;
-  margin-top: 8px;
-}
-
-.hero-guarantee-note {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
-.hero-guarantee-note span {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-/* Hero Media Showcase */
-.hero-media-wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-
-.hero-image-card {
-  position: relative;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border-light);
-  background: #FFF;
-  transition: transform 0.4s ease;
-}
-
-.hero-image-card:hover {
-  transform: translateY(-4px);
-}
-
-.hero-floating-badge {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  padding: 10px 16px;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  border: 1px solid rgba(236, 72, 153, 0.2);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.9rem;
-  z-index: 10;
-  animation: floatSoft 4s ease-in-out infinite alternate;
-}
-
-.badge-top-right {
-  top: 16px;
-  right: 16px;
-}
-
-.badge-bottom-left {
-  bottom: 20px;
-  left: 20px;
-}
-
-@keyframes floatSoft {
-  0% { transform: translateY(0px); }
-  100% { transform: translateY(-8px); }
-}
-
-/* Seção de Recursos / Por que o DoramaBox */
-.section {
-  padding: 70px 0;
-}
-
-.section-bg-soft {
-  background-color: var(--bg-secondary);
-}
-
-.section-header {
+/* Banner de Notificação no Celular */
+.mobile-pill-banner {
+  background: var(--gradient-brand);
+  color: #FFF;
+  padding: 8px 14px;
   text-align: center;
-  max-width: 680px;
-  margin: 0 auto 50px;
-}
-
-.section-eyebrow {
-  display: inline-block;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  color: var(--pink-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 8px;
+  letter-spacing: 0.02em;
 }
 
-.section-title {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
-  font-weight: 800;
-  color: var(--text-primary);
-  line-height: 1.2;
-}
-
-.section-desc {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  margin-top: 12px;
-}
-
-/* Grid de Benefícios */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-}
-
-.feature-card {
-  background: var(--bg-card);
-  border-radius: var(--radius-lg);
-  padding: 30px 24px;
-  border: 1px solid var(--border-light);
-  box-shadow: var(--shadow-sm);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--border-brand);
-  box-shadow: var(--shadow-md);
-}
-
-.feature-icon-box {
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-md);
-  background: var(--pink-soft);
-  color: var(--pink-primary);
+/* Conteúdo Principal do Celular */
+.mobile-content {
+  padding: 20px 18px 40px;
   display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Hero Section Mobile */
+.mobile-hero-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-  margin-bottom: 20px;
+  gap: 12px;
 }
 
-.feature-card:nth-child(2) .feature-icon-box {
-  background: var(--purple-soft);
-  color: var(--purple-primary);
+.app-icon-hero {
+  width: 76px;
+  height: 76px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px var(--pink-glow);
+  margin-bottom: 4px;
 }
 
-.feature-card h4 {
+.mobile-main-title {
   font-family: var(--font-heading);
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1.7rem;
+  font-weight: 800;
+  line-height: 1.2;
   color: var(--text-primary);
-  margin-bottom: 10px;
+  letter-spacing: -0.02em;
 }
 
-.feature-card p {
+.mobile-subtitle {
   font-size: 0.95rem;
   color: var(--text-secondary);
   line-height: 1.5;
 }
 
-/* Catálogo & Doramas em Alta */
-.catalog-nav-tabs {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 35px;
-}
-
-.catalog-tab {
-  padding: 10px 20px;
-  border-radius: var(--radius-full);
-  font-size: 0.9rem;
-  font-weight: 700;
-  background: var(--bg-secondary);
-  color: var(--text-secondary);
-  border: 1px solid var(--border-light);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.catalog-tab.active, .catalog-tab:hover {
-  background: var(--pink-primary);
-  color: #fff;
-  border-color: var(--pink-primary);
-}
-
-.dorama-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-  gap: 20px;
-}
-
-.dorama-card {
-  background: #FFF;
+/* Destaque Promocional Obrigatório */
+.mobile-promo-badge {
+  width: 100%;
+  background: var(--gradient-soft);
+  border: 1.5px solid var(--border-brand);
   border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-light);
-  transition: all 0.3s;
+  padding: 12px 14px;
+  text-align: center;
+}
+
+.mobile-promo-badge h3 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--pink-primary);
+  text-transform: uppercase;
+}
+
+.mobile-promo-badge p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* ============================================================
+   SEÇÃO DO BOTÃO ÚNICO DE DOWNLOAD (REQUISITO FUNDAMENTAL)
+   ============================================================ */
+.single-download-section {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--border-brand);
+  padding: 20px 16px;
+  box-shadow: 0 8px 24px rgba(236, 72, 153, 0.12);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
 }
 
-.dorama-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--border-brand);
+.single-download-btn {
+  width: 100%;
+  padding: 18px 20px;
+  background: var(--gradient-cta);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(236, 72, 153, 0.45);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.dorama-thumb-wrapper {
+.single-download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(236, 72, 153, 0.55);
+}
+
+.single-download-btn:active {
+  transform: translateY(0);
+}
+
+.apk-specs-pill {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* ============================================================
+   REQUISITO OBRIGATÓRIO 3:
+   Abaixo do botão “BAIXAR APK”, adicionar o texto:
+   “Precisa de ajuda para instalar? Nossa equipe pode orientar você pelo WhatsApp.”
+   Adicionar um botão secundário:
+   “FALAR COM O SUPORTE”.
+   Esse botão deve abrir o mesmo WhatsApp com a mensagem:
+   “Olá! Preciso de ajuda para baixar ou instalar o APK do DoramaBox.”
+   ============================================================ */
+.download-support-block {
+  width: 100%;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.download-support-text {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.btn-falar-suporte {
+  width: 100%;
+  padding: 12px 18px;
+  background-color: var(--whatsapp-color);
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
+  transition: background-color 0.2s;
+}
+
+.btn-falar-suporte:hover {
+  background-color: var(--whatsapp-hover);
+}
+
+/* Destaque: Mais de 1.000 Filmes & Doramas */
+.movies-counter-card {
+  background: var(--pink-light);
+  border: 1.5px solid rgba(236, 72, 153, 0.25);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+}
+
+.movies-counter-number {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--pink-primary);
+  line-height: 1;
+}
+
+.movies-counter-label {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: 4px;
+}
+
+.movies-counter-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* Vitrine de Pôsteres no Formato Celular */
+.section-title-mobile {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.mobile-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.mobile-dorama-card {
+  background: #FFF;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.mobile-dorama-thumb {
   position: relative;
   aspect-ratio: 2/3;
   overflow: hidden;
   background: #1e1b2e;
 }
 
-.dorama-thumb-wrapper img {
+.mobile-dorama-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
 }
 
-.dorama-card:hover .dorama-thumb-wrapper img {
-  transform: scale(1.05);
-}
-
-.dorama-audio-badge {
+.mobile-audio-tag {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 6px;
+  left: 6px;
   background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(4px);
   color: #FFF;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 700;
-  padding: 4px 8px;
-  border-radius: 6px;
-}
-
-.dorama-quality-badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: var(--pink-primary);
-  color: #FFF;
-  font-size: 0.7rem;
-  font-weight: 800;
-  padding: 3px 6px;
+  padding: 2px 6px;
   border-radius: 4px;
 }
 
-.dorama-card-info {
-  padding: 14px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+.mobile-dorama-info {
+  padding: 8px 10px;
 }
 
-.dorama-card-title {
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 4px;
-}
-
-.dorama-card-meta {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  display: flex;
-  justify-content: space-between;
-  margin-top: auto;
-  padding-top: 8px;
-}
-
-/* Seção Obrigatória: Dispositivos Compatíveis & Limitações */
-.devices-section {
-  background: #FFFFFF;
-  border-top: 1px solid var(--border-light);
-  border-bottom: 1px solid var(--border-light);
-}
-
-.devices-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 24px;
-}
-
-.device-card {
-  background: var(--bg-secondary);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  border: 1px solid var(--border-light);
-}
-
-.device-card-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 16px;
-}
-
-.device-card-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
-  background: var(--gradient-brand);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-}
-
-.device-card h4 {
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
-  font-weight: 700;
-}
-
-.device-card-specs {
-  margin-top: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.spec-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-}
-
-.spec-item svg {
-  flex-shrink: 0;
-  margin-top: 3px;
-  color: var(--pink-primary);
-}
-
-/* Caixa de Transparência & Limitações */
-.limitations-box {
-  margin-top: 35px;
-  background: var(--purple-light);
-  border: 1px solid rgba(139, 92, 246, 0.2);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-}
-
-.limitations-box h5 {
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--purple-dark);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-
-.limitations-box p {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-/* Seção de Oferta & Preço (R$ 9,90) */
-.pricing-section {
-  position: relative;
-  background: radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.06) 0%, transparent 70%),
-              var(--bg-secondary);
-}
-
-.pricing-card-wrapper {
-  max-width: 620px;
-  margin: 0 auto;
-}
-
-.pricing-card-main {
-  background: #FFFFFF;
-  border-radius: var(--radius-xl);
-  padding: 40px 32px;
-  border: 2px solid rgba(236, 72, 153, 0.35);
-  box-shadow: var(--shadow-lg);
-  text-align: center;
-  position: relative;
-}
-
-.pricing-badge-popular {
-  position: absolute;
-  top: -16px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--gradient-brand);
-  color: #FFF;
+.mobile-dorama-title {
   font-size: 0.85rem;
-  font-weight: 800;
-  padding: 6px 20px;
-  border-radius: var(--radius-full);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.4);
-}
-
-.pricing-plan-title {
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  margin-top: 10px;
-}
-
-.pricing-old-price {
-  font-size: 1.1rem;
-  color: var(--text-light);
-  text-decoration: line-through;
-  margin-top: 10px;
-}
-
-.pricing-amount-block {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 6px;
-  margin: 8px 0 16px;
-}
-
-.pricing-currency {
-  font-family: var(--font-heading);
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--pink-primary);
-}
-
-.pricing-number {
-  font-family: var(--font-heading);
-  font-size: 4rem;
-  font-weight: 900;
-  color: var(--pink-primary);
-  line-height: 1;
-}
-
-.pricing-period {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-}
-
-.pricing-single-payment-pill {
-  display: inline-block;
-  background: var(--pink-light);
-  color: var(--pink-primary);
-  font-weight: 800;
-  font-size: 0.95rem;
-  padding: 8px 18px;
-  border-radius: var(--radius-full);
-  margin-bottom: 25px;
-  border: 1px solid rgba(236, 72, 153, 0.2);
-}
-
-.pricing-benefits-list {
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 30px;
-}
-
-.pricing-benefit-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-}
-
-.pricing-benefit-item svg {
-  color: var(--pink-primary);
-  flex-shrink: 0;
-}
-
-.pricing-guarantee-seal {
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-/* FAQ Accordion */
-.faq-list {
-  max-width: 780px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.faq-item {
-  background: #FFF;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-light);
-  overflow: hidden;
-  transition: all 0.2s;
-}
-
-.faq-question {
-  width: 100%;
-  padding: 20px;
-  background: none;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-align: left;
-  font-family: var(--font-heading);
-  font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-primary);
-  cursor: pointer;
-}
-
-.faq-question svg {
-  transition: transform 0.3s ease;
-  color: var(--pink-primary);
-  flex-shrink: 0;
-}
-
-.faq-item.active .faq-question svg {
-  transform: rotate(180deg);
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-  padding: 0 20px;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.faq-item.active .faq-answer {
-  max-height: 300px;
-  padding-bottom: 20px;
-}
-
-/* Aviso Legal de Conteúdo Licenciado */
-.legal-disclaimer-section {
-  background: #F1F5F9;
-  border-top: 1px solid var(--border-light);
-  padding: 30px 0;
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-.legal-disclaimer-section a {
-  color: var(--pink-primary);
-  text-decoration: underline;
-}
-
-/* Footer */
-.footer {
-  background: #0F172A;
-  color: #94A3B8;
-  padding: 50px 0 30px;
-  font-size: 0.9rem;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 40px;
-}
-
-.footer-brand h4 {
-  font-family: var(--font-heading);
-  color: #FFF;
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-}
-
-.footer-brand p {
-  max-width: 380px;
-  line-height: 1.5;
-  color: #94A3B8;
-}
-
-.footer-col h5 {
-  font-family: var(--font-heading);
-  color: #FFF;
-  font-size: 1rem;
-  margin-bottom: 16px;
-}
-
-.footer-col ul {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footer-col a:hover {
-  color: var(--pink-primary);
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-  font-size: 0.85rem;
-}
-
-/* ============================================================
-   BOTÃO FLUTUANTE DE WHATSAPP OFICIAL OBRIGATÓRIO
-   Posição fixa no canto inferior direito
-   Ícone oficial, circular verde, animação suave, não cobre checkout
-   ============================================================ */
-.whatsapp-floating-widget {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  animation: floatIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes floatIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.whatsapp-floating-btn {
-  width: 60px;
-  height: 60px;
-  background-color: var(--whatsapp-color);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  cursor: pointer;
-  border: 2px solid #FFFFFF;
-}
-
-.whatsapp-floating-btn:hover {
-  background-color: var(--whatsapp-hover);
-  transform: scale(1.08);
-  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.55);
-}
-
-.whatsapp-floating-btn svg {
-  width: 32px;
-  height: 32px;
-  fill: #FFFFFF;
-}
-
-/* Radar pulse suave */
-.whatsapp-floating-btn::before {
-  content: '';
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-  border-radius: 50%;
-  border: 2px solid var(--whatsapp-color);
-  opacity: 0.8;
-  animation: whatsappPulse 2.4s infinite;
-  pointer-events: none;
-}
-
-@keyframes whatsappPulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  70% {
-    transform: scale(1.35);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1.35);
-    opacity: 0;
-  }
-}
-
-/* Tooltip balão de atendimento */
-.whatsapp-tooltip-bubble {
-  background: #FFFFFF;
-  color: var(--text-primary);
-  padding: 8px 14px;
-  border-radius: var(--radius-full);
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-light);
-  font-size: 0.82rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 6px;
   white-space: nowrap;
-  pointer-events: none;
-  transition: opacity 0.2s, transform 0.2s;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.whatsapp-online-dot {
-  width: 8px;
-  height: 8px;
-  background-color: var(--whatsapp-color);
-  border-radius: 50%;
-  display: inline-block;
-}
-
-/* ============================================================
-   ESTILOS ESPECÍFICOS PARA CELULAR ANDROID (MOBILE FIRST)
-   ============================================================ */
-
-/* Barra Fixa Sticky Inferior no Celular */
-.mobile-bottom-bar {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-top: 1px solid var(--border-light);
-  padding: 10px 16px;
-  z-index: 900;
-  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
-}
-
-.mobile-bottom-bar-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  max-width: 480px;
-  margin: 0 auto;
-}
-
-.mobile-price-tag {
-  display: flex;
-  flex-direction: column;
-}
-
-.mobile-price-tag small {
+.mobile-dorama-score {
   font-size: 0.72rem;
   color: var(--text-muted);
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.mobile-price-tag strong {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  color: var(--pink-primary);
-  line-height: 1.1;
-}
-
-/* Media Queries para Mobile / Celulares Android */
-@media (max-width: 768px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    text-align: center;
-  }
-
-  .hero-content {
-    align-items: center;
-  }
-
-  .hero-badge-tag {
-    margin: 0 auto;
-  }
-
-  .hero-subtitle {
-    margin: 0 auto;
-  }
-
-  .promo-callout-card {
-    text-align: left;
-    width: 100%;
-  }
-
-  .hero-cta-group {
-    justify-content: center;
-    width: 100%;
-  }
-
-  .hero-cta-group .btn {
-    width: 100%;
-  }
-
-  .hero-guarantee-note {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  /* Posicionamento do WhatsApp no celular para não cobrir a barra fixa */
-  .mobile-bottom-bar {
-    display: block;
-  }
-
-  .whatsapp-floating-widget {
-    bottom: 78px;
-    right: 16px;
-  }
-
-  .whatsapp-tooltip-bubble {
-    display: none; /* Oculta tooltip em mobile para não poluir tela */
-  }
-
-  .whatsapp-floating-btn {
-    width: 52px;
-    height: 52px;
-  }
-
-  .whatsapp-floating-btn svg {
-    width: 28px;
-    height: 28px;
-  }
-
-  /* Padding extra no rodapé para não ficar coberto pela barra inferior */
-  body {
-    padding-bottom: 70px;
-  }
-}
-
-/* ============================================================
-   PÁGINA DE DOWNLOAD DO APK & VALIDAÇÃO DE PAGAMENTO
-   ============================================================ */
-.download-page-hero {
-  padding: 50px 0 40px;
-  text-align: center;
-  background: var(--bg-secondary);
-  border-bottom: 1px solid var(--border-light);
-}
-
-.download-status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  border-radius: var(--radius-full);
-  font-weight: 700;
-  font-size: 0.9rem;
-  margin-bottom: 16px;
-}
-
-.download-status-badge.verified {
-  background: #DCFCE7;
-  color: #15803D;
-  border: 1px solid #86EFAC;
-}
-
-.download-status-badge.blocked {
-  background: #FEE2E2;
-  color: #B91C1C;
-  border: 1px solid #FCA5A5;
-}
-
-.download-box-card {
-  max-width: 640px;
-  margin: 30px auto;
-  background: #FFF;
-  border-radius: var(--radius-xl);
-  padding: 36px 28px;
-  box-shadow: var(--shadow-lg);
-  border: 2px solid var(--border-brand);
-  text-align: center;
-}
-
-.apk-info-strip {
   display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin: 16px 0 24px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2px;
 }
 
-.apk-info-pill {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-light);
-  padding: 6px 14px;
-  border-radius: var(--radius-sm);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-}
-
-/* Requisito Obrigatório: Seção de Suporte abaixo do Download */
-.download-support-section {
-  margin-top: 25px;
-  padding-top: 22px;
-  border-top: 1px solid var(--border-light);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.download-support-text {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  font-weight: 500;
-}
-
-/* Passo a Passo de Instalação no Android */
-.install-steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
-}
-
-.install-step-card {
-  background: #FFF;
+/* Guia de Instalação no Celular Android */
+.mobile-guide-card {
+  background: #FFFFFF;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
-  padding: 24px;
-  position: relative;
-  text-align: left;
+  padding: 18px 16px;
 }
 
-.step-number {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--gradient-brand);
-  color: #FFF;
-  font-family: var(--font-heading);
-  font-weight: 800;
+.mobile-guide-step {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
   margin-bottom: 14px;
 }
 
-.install-step-card h5 {
-  font-family: var(--font-heading);
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 8px;
+.mobile-step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--gradient-brand);
+  color: #FFF;
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.install-step-card p {
+.mobile-step-text h5 {
   font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.mobile-step-text p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Dispositivos e Limitações no Celular */
+.mobile-device-specs {
+  background: var(--bg-soft);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  font-size: 0.82rem;
   color: var(--text-secondary);
   line-height: 1.5;
 }
 
-/* ============================================================
-   PAINEL ADMINISTRATIVO (ADMIN.HTML)
-   ============================================================ */
-.admin-card {
+/* Perguntas Frequentes no Celular */
+.mobile-faq-item {
   background: #FFF;
-  border-radius: var(--radius-lg);
-  padding: 28px;
   border: 1px solid var(--border-light);
-  box-shadow: var(--shadow-sm);
-  margin-bottom: 24px;
+  border-radius: var(--radius-md);
+  margin-bottom: 8px;
+  overflow: hidden;
 }
 
-.form-group {
-  margin-bottom: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.form-label {
+.mobile-faq-question {
+  width: 100%;
+  padding: 12px 14px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: var(--font-heading);
   font-size: 0.9rem;
   font-weight: 700;
   color: var(--text-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 }
 
-.form-input {
+.mobile-faq-answer {
+  display: none;
+  padding: 0 14px 12px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.mobile-faq-item.active .mobile-faq-answer {
+  display: block;
+}
+
+/* Rodapé Simples no Celular */
+.mobile-footer {
+  text-align: center;
+  padding: 24px 16px 80px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-light);
+  background: #FFFFFF;
+}
+
+/* ============================================================
+   BOTÃO FLUTUANTE DE WHATSAPP OFICIAL (CANTO INFERIOR DIREITO)
+   ============================================================ */
+.whatsapp-mobile-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  text-decoration: none;
+}
+
+.whatsapp-mobile-btn {
+  width: 58px;
+  height: 58px;
+  background-color: var(--whatsapp-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  border: 2px solid #FFFFFF;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.whatsapp-mobile-btn:active {
+  transform: scale(0.95);
+}
+
+.whatsapp-mobile-btn svg {
+  width: 30px;
+  height: 30px;
+  fill: #FFFFFF;
+}
+
+.whatsapp-mobile-btn::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 50%;
+  border: 2px solid var(--whatsapp-color);
+  opacity: 0.8;
+  animation: pulseMobile 2.4s infinite;
+}
+
+@keyframes pulseMobile {
+  0% { transform: scale(1); opacity: 0.8; }
+  70% { transform: scale(1.35); opacity: 0; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+/* Modal de Ação do Botão Único de Download */
+.download-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.download-modal-overlay.active {
+  display: flex;
+}
+
+.download-modal-sheet {
+  background: #FFFFFF;
   width: 100%;
-  padding: 12px 16px;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-md);
-  font-family: var(--font-body);
-  font-size: 0.95rem;
+  max-width: 480px;
+  border-radius: 24px 24px 0 0;
+  padding: 24px 20px 34px;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.modal-sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-sheet-header h4 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
   color: var(--text-primary);
-  background: #FFF;
-  transition: border-color 0.2s;
 }
 
-.form-input:focus {
-  outline: none;
-  border-color: var(--pink-primary);
-  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.15);
-}
-
-.form-hint {
-  font-size: 0.8rem;
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
   color: var(--text-muted);
 }

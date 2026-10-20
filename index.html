@@ -3,825 +3,351 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>DoramaBox - Seus doramas favoritos em um só lugar! | Acesso Vitalício R$ 9,90</title>
-  <meta name="description" content="Entre no universo dos doramas e descubra histórias que vão conquistar você. Acesso vitalício por apenas R$ 9,90 sem mensalidades. Aplicativo oficial para Celular Android, Smart TV e TV Box.">
+  <title>DoramaBox - Seus doramas favoritos em um só lugar! | Aplicativo Oficial Android</title>
+  <meta name="description" content="Entre no universo dos doramas e descubra histórias que vão conquistar você. Acesso vitalício por apenas R$ 9,90. Baixe o APK oficial para celular Android.">
   <meta name="theme-color" content="#FFFFFF">
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   
   <!-- Fontes Google Premium -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Estilos Principais -->
   <link rel="stylesheet" href="css/style.css">
-  
-  <!-- Favicon com Ícone Oficial -->
   <link rel="icon" type="image/png" href="assets/img/app-icon.png">
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <div class="top-banner" id="topAnnouncement">
-    <span class="badge-pill">Oferta Especial</span>
-    <span>Acesso Vitalício Oficial • Pagamento Único de R$ 9,90 • Sem Mensalidades</span>
+  <!-- ============================================================
+       FORMATO CELULAR (CONTAINER MOBILE APP)
+       ============================================================ -->
+  <main class="mobile-app-wrapper">
+    
+    <!-- Header do App Celular -->
+    <header class="mobile-app-header">
+      <div class="mobile-brand">
+        <img src="assets/img/app-icon.png" alt="DoramaBox Icon" width="36" height="36">
+        <div class="mobile-brand-title">Dorama<span>Box</span></div>
+      </div>
+      <div class="mobile-badge-top">
+        Android Oficial
+      </div>
+    </header>
+
+    <!-- Top Pill Notificação -->
+    <div class="mobile-pill-banner">
+      ⚡ ACESSO VITALÍCIO • PAGAMENTO ÚNICO DE R$ 9,90 • SEM MENSALIDADES
+    </div>
+
+    <!-- Conteúdo do Celular -->
+    <div class="mobile-content">
+
+      <!-- Hero Section Mobile -->
+      <section class="mobile-hero-card">
+        <img src="assets/img/app-icon.png" alt="Logo Oficial DoramaBox" class="app-icon-hero" width="76" height="76">
+        
+        <!-- Título Principal Obrigatório -->
+        <h1 class="mobile-main-title">
+          Seus doramas favoritos em um só lugar!
+        </h1>
+
+        <!-- Subtítulo Principal Obrigatório -->
+        <p class="mobile-subtitle">
+          Entre no universo dos doramas e descubra histórias que vão conquistar você.
+        </p>
+
+        <!-- Destaque Promocional Obrigatório -->
+        <div class="mobile-promo-badge">
+          <h3>ACESSO VITALÍCIO POR APENAS R$ 9,90</h3>
+          <p>Pagamento único • Sem mensalidades ou cobranças recorrentes</p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SEÇÃO DO BOTÃO ÚNICO DE DOWNLOAD (REQUISITO FUNDAMENTAL)
+           ============================================================ -->
+      <section class="single-download-section">
+        
+        <!-- Botão Único Principal de Download -->
+        <button id="mainSingleDownloadBtn" class="single-download-btn" onclick="handleSingleDownloadButton()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          BAIXAR APK
+        </button>
+
+        <div class="apk-specs-pill">
+          📦 Versão Oficial v4.6.2 • 💾 38.4 MB • 📱 Celular Android 7.0+
+        </div>
+
+        <!-- ============================================================
+             REQUISITO OBRIGATÓRIO 3:
+             Abaixo do botão “BAIXAR APK”, adicionar o texto:
+             “Precisa de ajuda para instalar? Nossa equipe pode orientar você pelo WhatsApp.”
+             Adicionar um botão secundário:
+             “FALAR COM O SUPORTE”.
+             Esse botão deve abrir o mesmo WhatsApp com a mensagem:
+             “Olá! Preciso de ajuda para baixar ou instalar o APK do DoramaBox.”
+             ============================================================ -->
+        <div class="download-support-block">
+          <p class="download-support-text">
+            Precisa de ajuda para instalar? Nossa equipe pode orientar você pelo WhatsApp.
+          </p>
+
+          <a id="downloadSupportLink" class="btn-falar-suporte" href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 32 32" fill="#FFF"><path d="M16.002 2C8.28 2 2 8.28 2 16.002c0 2.65.733 5.13 2.008 7.256L2 30l7.008-1.972A13.93 13.93 0 0 0 16.002 30C23.723 30 30 23.723 30 16.002 30 8.28 23.723 2 16.002 2zm0 25.642c-2.316 0-4.49-.66-6.33-1.808l-.454-.282-4.156 1.17 1.11-4.043-.309-.467A11.583 11.583 0 0 1 4.36 16.002C4.36 9.58 9.58 4.36 16.002 4.36c6.422 0 11.643 5.22 11.643 11.642 0 6.422-5.22 11.642-11.643 11.642zm6.386-8.73c-.35-.175-2.072-1.023-2.393-1.14-.322-.116-.555-.175-.788.176-.233.35-.904 1.14-1.109 1.373-.204.233-.408.263-.758.088-.35-.175-1.478-.545-2.816-1.737-1.042-.929-1.745-2.076-1.95-2.426-.204-.35-.022-.54.153-.714.158-.157.35-.408.525-.612.175-.205.233-.35.35-.584.117-.233.058-.438-.03-.612-.087-.175-.788-1.9-1.08-2.602-.284-.684-.572-.591-.788-.602-.204-.01-.437-.012-.67-.012-.234 0-.613.088-.934.438-.321.35-1.226 1.2-1.226 2.924 0 1.724 1.255 3.39 1.43 3.623.175.234 2.47 3.771 5.983 5.286.836.36 1.488.576 1.996.737.84.266 1.604.229 2.208.139.674-.101 2.072-.847 2.364-1.664.292-.817.292-1.518.204-1.664-.087-.146-.32-.233-.67-.408z"/></svg>
+            FALAR COM O SUPORTE
+          </a>
+        </div>
+
+      </section>
+
+      <!-- Destaque: Mais de 1.000 Filmes & Doramas -->
+      <section class="movies-counter-card">
+        <div class="movies-counter-number">+1.000</div>
+        <div class="movies-counter-label">Filmes e Doramas Completos</div>
+        <p class="movies-counter-desc">
+          Abaixo você confere apenas alguns exemplos. Nosso aplicativo oficial conta com um catálogo completo de <strong>mais de 1.000 títulos</strong> dublados e legendados em alta definição para assistir no seu celular Android!
+        </p>
+      </section>
+
+      <!-- Vitrine de Filmes e Doramas da Pasta Filmes -->
+      <section>
+        <div class="section-title-mobile">
+          <span>🎬</span> Exemplos do Catálogo
+        </div>
+
+        <div class="mobile-catalog-grid">
+          
+          <div class="mobile-dorama-card">
+            <div class="mobile-dorama-thumb">
+              <img src="assets/img/filmes/dorama-01.jpg" alt="Dorama 1" loading="lazy">
+              <span class="mobile-audio-tag">Dublado</span>
+            </div>
+            <div class="mobile-dorama-info">
+              <div class="mobile-dorama-title">Amores Proibidos</div>
+              <div class="mobile-dorama-score">
+                <span>⭐ 9.9</span>
+                <span>Full HD</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mobile-dorama-card">
+            <div class="mobile-dorama-thumb">
+              <img src="assets/img/filmes/dorama-02.jpg" alt="Dorama 2" loading="lazy">
+              <span class="mobile-audio-tag">Legendado</span>
+            </div>
+            <div class="mobile-dorama-info">
+              <div class="mobile-dorama-title">Destinos Cruzados</div>
+              <div class="mobile-dorama-score">
+                <span>⭐ 9.8</span>
+                <span>4K Ultra</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mobile-dorama-card">
+            <div class="mobile-dorama-thumb">
+              <img src="assets/img/filmes/dorama-03.jpg" alt="Dorama 3" loading="lazy">
+              <span class="mobile-audio-tag">Dublado</span>
+            </div>
+            <div class="mobile-dorama-info">
+              <div class="mobile-dorama-title">Legado Secreto</div>
+              <div class="mobile-dorama-score">
+                <span>⭐ 9.7</span>
+                <span>Full HD</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mobile-dorama-card">
+            <div class="mobile-dorama-thumb">
+              <img src="assets/img/filmes/dorama-04.jpg" alt="Dorama 4" loading="lazy">
+              <span class="mobile-audio-tag">Dublado</span>
+            </div>
+            <div class="mobile-dorama-info">
+              <div class="mobile-dorama-title">Memórias de Outono</div>
+              <div class="mobile-dorama-score">
+                <span>⭐ 9.9</span>
+                <span>Full HD</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mobile-dorama-card">
+            <div class="mobile-dorama-thumb">
+              <img src="assets/img/filmes/dorama-05.jpg" alt="Dorama 5" loading="lazy">
+              <span class="mobile-audio-tag">Dublado</span>
+            </div>
+            <div class="mobile-dorama-info">
+              <div class="mobile-dorama-title">Promessa Eterna</div>
+              <div class="mobile-dorama-score">
+                <span>⭐ 9.6</span>
+                <span>4K Ultra</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mobile-dorama-card">
+            <div class="mobile-dorama-thumb">
+              <img src="assets/img/filmes/dorama-06.jpg" alt="Dorama 6" loading="lazy">
+              <span class="mobile-audio-tag">Legendado</span>
+            </div>
+            <div class="mobile-dorama-info">
+              <div class="mobile-dorama-title">Corações em Sintonia</div>
+              <div class="mobile-dorama-score">
+                <span>⭐ 9.8</span>
+                <span>Full HD</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 14px; font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">
+          ✨ E mais de 1.000 outros filmes e séries disponíveis no aplicativo!
+        </div>
+      </section>
+
+      <!-- Guia Passo a Passo de Instalação no Celular Android -->
+      <section class="mobile-guide-card">
+        <div class="section-title-mobile" style="margin-bottom: 14px;">
+          <span>📱</span> Como Instalar no Android
+        </div>
+
+        <div class="mobile-guide-step">
+          <div class="mobile-step-num">1</div>
+          <div class="mobile-step-text">
+            <h5>Baixe o APK</h5>
+            <p>Toque no botão "BAIXAR APK" no topo para transferir o instalador para o seu celular.</p>
+          </div>
+        </div>
+
+        <div class="mobile-guide-step">
+          <div class="mobile-step-num">2</div>
+          <div class="mobile-step-text">
+            <h5>Permita Fontes Desconhecidas</h5>
+            <p>Toque no arquivo baixado e ative "Permitir desta fonte" nas configurações do seu Android.</p>
+          </div>
+        </div>
+
+        <div class="mobile-guide-step">
+          <div class="mobile-step-num">3</div>
+          <div class="mobile-step-text">
+            <h5>Instale e Aproveite</h5>
+            <p>Clique em Instalar e pronto! Acesso vitalício imediato a mais de 1.000 doramas em Full HD.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dispositivos Compatíveis & Limitações -->
+      <section class="mobile-device-specs">
+        <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">
+          ℹ️ Dispositivos & Condições de Acesso:
+        </strong>
+        • <strong>Compatibilidade:</strong> Celulares e Tablets Android (7.0 ou superior), Smart TV Android e TV Box.<br>
+        • <strong>Acesso Vitalício:</strong> Pagamento único de R$ 9,90, sem mensalidades ou taxas ocultas.<br>
+        • <strong>Limitações:</strong> Requer internet ativa (mínimo 10 Mbps). Dispositivos iOS (iPhone) não executam APK nativamente.<br>
+        • <strong>Licenciamento:</strong> Disponibiliza exclusivamente conteúdo audiovisual licenciado ou autorizado.
+      </section>
+
+      <!-- Perguntas Frequentes (FAQ) Mobile -->
+      <section>
+        <div class="section-title-mobile">
+          <span>❓</span> Dúvidas Frequentes
+        </div>
+
+        <div class="mobile-faq-item active">
+          <button class="mobile-faq-question" onclick="toggleFaq(this)">
+            <span>Realmente é pagamento único de R$ 9,90?</span>
+            <span>▾</span>
+          </button>
+          <div class="mobile-faq-answer">
+            Sim! Você paga apenas uma vez R$ 9,90 e tem acesso vitalício garantido sem mensalidades ou renovações.
+          </div>
+        </div>
+
+        <div class="mobile-faq-item">
+          <button class="mobile-faq-question" onclick="toggleFaq(this)">
+            <span>Quantos filmes e doramas estão inclusos?</span>
+            <span>▾</span>
+          </button>
+          <div class="mobile-faq-answer">
+            O aplicativo conta com mais de 1.000 filmes e doramas completos dublados e legendados em português.
+          </div>
+        </div>
+
+        <div class="mobile-faq-item">
+          <button class="mobile-faq-question" onclick="toggleFaq(this)">
+            <span>Funciona em qualquer celular Android?</span>
+            <span>▾</span>
+          </button>
+          <div class="mobile-faq-answer">
+            Sim, funciona em aparelhos Samsung, Motorola, Xiaomi, Realme e qualquer smartphone com Android 7.0+.
+          </div>
+        </div>
+
+        <div class="mobile-faq-item">
+          <button class="mobile-faq-question" onclick="toggleFaq(this)">
+            <span>E se eu precisar de ajuda para instalar?</span>
+            <span>▾</span>
+          </button>
+          <div class="mobile-faq-answer">
+            Nossa equipe oferece suporte direto pelo WhatsApp oficial <strong>+55 85 8441-4627</strong>.
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="mobile-footer">
+      <p style="margin-bottom: 6px;">&copy; 2026 DoramaBox. Todos os direitos reservados.</p>
+      <p>Conteúdo Audiovisual Licenciado • Otimizado para Celulares Android</p>
+      <p style="margin-top: 6px;">
+        <a href="termos.html" style="color: var(--pink-primary); text-decoration: underline;">Termos de Uso & Licenciamento</a>
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- ============================================================
+       MODAL DE AÇÃO DO BOTÃO ÚNICO DE DOWNLOAD
+       Abre opções de checkout / download direto do APK / suporte
+       ============================================================ -->
+  <div id="downloadActionModal" class="download-modal-overlay" onclick="closeDownloadModal()">
+    <div class="download-modal-sheet" onclick="event.stopPropagation()">
+      <div class="modal-sheet-header">
+        <h4>Baixar DoramaBox APK</h4>
+        <button class="modal-close-btn" onclick="closeDownloadModal()">&times;</button>
+      </div>
+
+      <p style="font-size: 0.88rem; color: var(--text-secondary);">
+        Acesso vitalício oficial por apenas <strong>R$ 9,90</strong> (sem mensalidades). Escolha como deseja prosseguir:
+      </p>
+
+      <button onclick="proceedToCheckout()" class="single-download-btn" style="padding: 14px; font-size: 1.05rem;">
+        💳 GARANTIR ACESSO VITALÍCIO (R$ 9,90)
+      </button>
+
+      <button onclick="directApkDownload()" class="btn-falar-suporte" style="background-color: var(--purple-primary); box-shadow: 0 6px 16px rgba(139,92,246,0.3); padding: 13px;">
+        📥 JÁ PAGUEI / BAIXAR APK DIRETO
+      </button>
+
+      <a id="modalWhatsappHelp" href="javascript:void(0)" target="_blank" class="btn-falar-suporte" style="padding: 13px;">
+        💬 SUPORTE DE INSTALAÇÃO NO WHATSAPP
+      </a>
+    </div>
   </div>
 
-  <!-- Header & Navegação -->
-  <header class="header" id="mainHeader">
-    <div class="container header-container">
-      <a href="index.html" class="brand-logo" title="DoramaBox Oficial">
-        <img src="assets/img/app-icon.png" alt="Logo DoramaBox" width="38" height="38">
-        <span>Dorama<span class="brand-highlight">Box</span></span>
-      </a>
-
-      <nav class="nav-links">
-        <a href="#catalogo" class="nav-link">Catálogo</a>
-        <a href="#dispositivos" class="nav-link">Dispositivos & Android</a>
-        <a href="#oferta" class="nav-link">Acesso Vitalício</a>
-        <a href="#faq" class="nav-link">Dúvidas Frequentes</a>
-      </nav>
-
-      <div class="nav-actions">
-        <a href="download.html" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.88rem;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          Área do Cliente
-        </a>
-        <a href="javascript:void(0)" onclick="redirectToCheckout()" class="btn btn-primary" id="headerCtaBtn">
-          GARANTIR MEU ACESSO VITALÍCIO
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container">
-      <div class="hero-grid">
-        
-        <!-- Conteúdo do Hero -->
-        <div class="hero-content">
-          <div class="hero-badge-tag">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            Streaming Oficial de Doramas • Otimizado para Android
-          </div>
-
-          <!-- Título Principal Obrigatório -->
-          <h1 class="hero-title">
-            Seus doramas favoritos em um só lugar!
-          </h1>
-
-          <!-- Subtítulo Principal Obrigatório -->
-          <p class="hero-subtitle">
-            Entre no universo dos doramas e descubra histórias que vão conquistar você.
-          </p>
-
-          <!-- Destaque Promocional Obrigatório -->
-          <div class="promo-callout-card">
-            <div class="promo-callout-icon">
-              ✨
-            </div>
-            <div class="promo-callout-text">
-              <h3>ACESSO VITALÍCIO POR APENAS R$ 9,90</h3>
-              <p>Pagamento único • Sem mensalidades ou cobranças recorrentes</p>
-            </div>
-          </div>
-
-          <!-- Botão Principal Obrigatório & Ações -->
-          <div class="hero-cta-group">
-            <button onclick="redirectToCheckout()" class="btn btn-primary btn-lg" id="heroMainBtn" style="font-size: 1.15rem;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-              GARANTIR MEU ACESSO VITALÍCIO
-            </button>
-            
-            <a href="download.html" class="btn btn-secondary">
-              Já comprei? Baixar APK
-            </a>
-          </div>
-
-          <!-- Selos de Confiança e Transparência -->
-          <div class="hero-guarantee-note">
-            <span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Pagamento 100% Seguro
-            </span>
-            <span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Acesso Vitalício Garantido
-            </span>
-            <span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Suporte via WhatsApp
-            </span>
-          </div>
-
-        </div>
-
-        <!-- Visual Hero Showcase -->
-        <div class="hero-media-wrapper">
-          <div class="hero-image-card">
-            <img src="assets/img/hero-showcase.jpg" alt="DoramaBox no Celular Android e Smart TV" width="600" height="400" loading="eager">
-            
-            <div class="hero-floating-badge badge-top-right">
-              <span style="color: #EC4899;">●</span>
-              <span>Ultra HD 4K & Dublado</span>
-            </div>
-            
-            <div class="hero-floating-badge badge-bottom-left">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
-              <span>Suporte Android Oficial</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção de Recursos e Vantagens Exclusivas -->
-  <section class="section section-bg-soft" id="vantagens">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">Por que escolher o DoramaBox?</span>
-        <h2 class="section-title">A melhor experiência em doramas asiáticos</h2>
-        <p class="section-desc">Criado sob medida para quem ama produções coreanas, chinesas, japonesas e tailandesas com a máxima comodidade no celular Android e na TV.</p>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon-box">💎</div>
-          <h4>Pagamento Único de R$ 9,90</h4>
-          <p>Esqueça mensalidades caras que cobram todo mês no cartão. No DoramaBox você paga apenas uma vez e tem acesso vitalício garantido.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon-box">📱</div>
-          <h4>Aplicativo Leve para Celular Android</h4>
-          <p>APK oficial super rápido, compatível com smartphones Android (Samsung, Motorola, Xiaomi, etc.) sem travamentos e com carregamento instantâneo.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon-box">🇧🇷</div>
-          <h4>Dublado e Legendado em Português</h4>
-          <p>Episódios completos com áudio original em coreano e legendas sincronizadas em PT-BR, além de milhares de doramas dublados em alta definição.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon-box">📺</div>
-          <h4>Smart TV e TV Box</h4>
-          <p>Instale facilmente na sua TV Box Android, Fire TV Stick ou espelhe direto do seu celular para a tela grande com qualidade Full HD e 4K.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon-box">🔄</div>
-          <h4>Atualizações Automáticas</h4>
-          <p>Novos episódios e lançamentos adicionados diariamente ao catálogo, sem você precisar pagar nada a mais por isso.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon-box">💬</div>
-          <h4>Suporte Dedicado no WhatsApp</h4>
-          <p>Precisa de auxílio para instalar ou tem qualquer dúvida? Nossa equipe atende diretamente pelo WhatsApp oficial <strong>+55 85 8441-4627</strong>.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção de Catálogo de Doramas em Alta -->
-  <section class="section" id="catalogo">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">Acervo Gigante com Mais de 1.000 Títulos</span>
-        <h2 class="section-title">Mais de 1.000 Filmes e Doramas para Maratonar</h2>
-        <p class="section-desc">
-          Abaixo você confere apenas uma <strong>pequena amostra</strong> das obras mais queridas. O DoramaBox conta com um acervo completo de <strong>mais de 1.000 filmes, séries e doramas</strong> asiáticos completos, dublados e legendados em português com acesso vitalício por apenas R$ 9,90!
-        </p>
-      </div>
-
-      <!-- Barra de Estatísticas do Acervo (+1.000 Filmes) -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 35px; text-align: center;">
-        <div style="background: var(--pink-light); border: 1.5px solid rgba(236,72,153,0.25); border-radius: var(--radius-md); padding: 18px 14px;">
-          <div style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 900; color: var(--pink-primary); line-height: 1;">+1.000</div>
-          <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-top: 4px;">Filmes & Doramas Completos</div>
-        </div>
-        <div style="background: var(--purple-light); border: 1.5px solid rgba(139,92,246,0.25); border-radius: var(--radius-md); padding: 18px 14px;">
-          <div style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 900; color: var(--purple-primary); line-height: 1;">100%</div>
-          <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-top: 4px;">Dublados & Legendados PT-BR</div>
-        </div>
-        <div style="background: #F0FDF4; border: 1.5px solid #86EFAC; border-radius: var(--radius-md); padding: 18px 14px;">
-          <div style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 900; color: #16A34A; line-height: 1;">4K & FHD</div>
-          <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-top: 4px;">Máxima Qualidade de Cinema</div>
-        </div>
-        <div style="background: #FFFBEB; border: 1.5px solid #FDE68A; border-radius: var(--radius-md); padding: 18px 14px;">
-          <div style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 900; color: #D97706; line-height: 1;">R$ 9,90</div>
-          <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-top: 4px;">Pagamento Único Vitalício</div>
-        </div>
-      </div>
-
-      <!-- Filtros de Categorias -->
-      <div class="catalog-nav-tabs">
-        <button class="catalog-tab active" onclick="filterCatalog('todos')">Todos os Títulos</button>
-        <button class="catalog-tab" onclick="filterCatalog('romance')">💖 Romances Inesquecíveis</button>
-        <button class="catalog-tab" onclick="filterCatalog('dublados')">🇧🇷 100% Dublados</button>
-        <button class="catalog-tab" onclick="filterCatalog('acao')">⚡ Ação & Suspense</button>
-        <button class="catalog-tab" onclick="filterCatalog('drama')">🎭 Dramas Emocionantes</button>
-      </div>
-
-      <!-- Grid de Posters Reais de Doramas -->
-      <div class="dorama-cards-grid" id="doramaCardsGrid">
-        
-        <!-- Card 1 -->
-        <div class="dorama-card" data-category="romance dublados">
-          <div class="dorama-thumb-wrapper">
-            <img src="assets/img/filmes/dorama-01.jpg" alt="Dorama em Destaque 1" loading="lazy">
-            <span class="dorama-audio-badge">Dublado & Legendado</span>
-            <span class="dorama-quality-badge">FULL HD</span>
-          </div>
-          <div class="dorama-card-info">
-            <h5 class="dorama-card-title">Amores Proibidos</h5>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Uma paixão arrebatadora que desafia segredos do passado e intrigas familiares.</p>
-            <div class="dorama-card-meta">
-              <span>⭐ 9.9 / 10</span>
-              <span>Episódios Completos</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="dorama-card" data-category="romance">
-          <div class="dorama-thumb-wrapper">
-            <img src="assets/img/filmes/dorama-02.jpg" alt="Dorama em Destaque 2" loading="lazy">
-            <span class="dorama-audio-badge">Legendado PT-BR</span>
-            <span class="dorama-quality-badge">4K ULTRA</span>
-          </div>
-          <div class="dorama-card-info">
-            <h5 class="dorama-card-title">Destinos Cruzados</h5>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Dois mundos opostos colidem em um romance repleto de emoções e reviravoltas.</p>
-            <div class="dorama-card-meta">
-              <span>⭐ 9.8 / 10</span>
-              <span>Episódios Completos</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="dorama-card" data-category="acao">
-          <div class="dorama-thumb-wrapper">
-            <img src="assets/img/filmes/dorama-03.jpg" alt="Dorama em Destaque 3" loading="lazy">
-            <span class="dorama-audio-badge">Dublado & Legendado</span>
-            <span class="dorama-quality-badge">4K ULTRA</span>
-          </div>
-          <div class="dorama-card-info">
-            <h5 class="dorama-card-title">Legado Secreto</h5>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Conspirações de poder, ação eletrizante e uma busca implacável por justiça.</p>
-            <div class="dorama-card-meta">
-              <span>⭐ 9.7 / 10</span>
-              <span>Episódios Completos</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="dorama-card" data-category="drama dublados">
-          <div class="dorama-thumb-wrapper">
-            <img src="assets/img/filmes/dorama-04.jpg" alt="Dorama em Destaque 4" loading="lazy">
-            <span class="dorama-audio-badge">Dublado em Português</span>
-            <span class="dorama-quality-badge">FULL HD</span>
-          </div>
-          <div class="dorama-card-info">
-            <h5 class="dorama-card-title">Memórias de Outono</h5>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Uma jornada comovente de superação, reconciliação e reencontro com quem se ama.</p>
-            <div class="dorama-card-meta">
-              <span>⭐ 9.9 / 10</span>
-              <span>Episódios Completos</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="dorama-card" data-category="romance drama">
-          <div class="dorama-thumb-wrapper">
-            <img src="assets/img/filmes/dorama-05.jpg" alt="Dorama em Destaque 5" loading="lazy">
-            <span class="dorama-audio-badge">Dublado & Legendado</span>
-            <span class="dorama-quality-badge">4K ULTRA</span>
-          </div>
-          <div class="dorama-card-info">
-            <h5 class="dorama-card-title">Promessa Eterna</h5>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Um pacto feito na infância resiste às barreiras do tempo e da distância.</p>
-            <div class="dorama-card-meta">
-              <span>⭐ 9.6 / 10</span>
-              <span>Episódios Completos</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="dorama-card" data-category="romance dublados">
-          <div class="dorama-thumb-wrapper">
-            <img src="assets/img/filmes/dorama-06.jpg" alt="Dorama em Destaque 6" loading="lazy">
-            <span class="dorama-audio-badge">Dublado em Português</span>
-            <span class="dorama-quality-badge">FULL HD</span>
-          </div>
-          <div class="dorama-card-info">
-            <h5 class="dorama-card-title">Corações em Sintonia</h5>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Comédia romântica irresistível com diálogos espirituosos e química apaixonante.</p>
-            <div class="dorama-card-meta">
-              <span>⭐ 9.8 / 10</span>
-              <span>Episódios Completos</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 7 -->
-        <div class="dorama-card" data-category="acao">
-          <div class="dorama-thumb-wrapper">
-            <img src="assets/img/filmes/dorama-07.jpg" alt="Dorama em Destaque 7" loading="lazy">
-            <span class="dorama-audio-badge">Legendado PT-BR</span>
-            <span class="dorama-quality-badge">4K ULTRA</span>
-          </div>
-          <div class="dorama-card-info">
-            <h5 class="dorama-card-title">A Caçada Noturna</h5>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Tensão do primeiro ao último episódio com agentes de elite e reviravoltas.</p>
-            <div class="dorama-card-meta">
-              <span>⭐ 9.7 / 10</span>
-              <span>Episódios Completos</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 8 -->
-        <div class="dorama-card" data-category="drama romance">
-          <div class="dorama-thumb-wrapper">
-            <img src="assets/img/filmes/dorama-08.jpg" alt="Dorama em Destaque 8" loading="lazy">
-            <span class="dorama-audio-badge">Dublado & Legendado</span>
-            <span class="dorama-quality-badge">FULL HD</span>
-          </div>
-          <div class="dorama-card-info">
-            <h5 class="dorama-card-title">Florescer da Esperança</h5>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">História poética sobre recomeços, cura emocional e a força dos laços afetivos.</p>
-            <div class="dorama-card-meta">
-              <span>⭐ 9.8 / 10</span>
-              <span>Episódios Completos</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 9 -->
-        <div class="dorama-card" data-category="romance dublados">
-          <div class="dorama-thumb-wrapper">
-            <img src="assets/img/filmes/dorama-09.jpg" alt="Dorama em Destaque 9" loading="lazy">
-            <span class="dorama-audio-badge">Dublado em Português</span>
-            <span class="dorama-quality-badge">4K ULTRA</span>
-          </div>
-          <div class="dorama-card-info">
-            <h5 class="dorama-card-title">Encontros do Acaso</h5>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Uma coincidência no metrô transforma completamente a vida de dois estranhos.</p>
-            <div class="dorama-card-meta">
-              <span>⭐ 9.5 / 10</span>
-              <span>Episódios Completos</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 10 -->
-        <div class="dorama-card" data-category="drama">
-          <div class="dorama-thumb-wrapper">
-            <img src="assets/img/filmes/dorama-10.jpg" alt="Dorama em Destaque 10" loading="lazy">
-            <span class="dorama-audio-badge">Legendado PT-BR</span>
-            <span class="dorama-quality-badge">FULL HD</span>
-          </div>
-          <div class="dorama-card-info">
-            <h5 class="dorama-card-title">A Voz do Coração</h5>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Um drama emocionante sobre música, paixão e sonhos inalcançáveis.</p>
-            <div class="dorama-card-meta">
-              <span>⭐ 9.7 / 10</span>
-              <span>Episódios Completos</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 11 -->
-        <div class="dorama-card" data-category="acao dublados">
-          <div class="dorama-thumb-wrapper">
-            <img src="assets/img/filmes/dorama-11.jpg" alt="Dorama em Destaque 11" loading="lazy">
-            <span class="dorama-audio-badge">Dublado & Legendado</span>
-            <span class="dorama-quality-badge">4K ULTRA</span>
-          </div>
-          <div class="dorama-card-info">
-            <h5 class="dorama-card-title">Operação Seul</h5>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Perseguições em alta velocidade e mistério criminal pelas ruas de Seul.</p>
-            <div class="dorama-card-meta">
-              <span>⭐ 9.6 / 10</span>
-              <span>Episódios Completos</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 12 -->
-        <div class="dorama-card" data-category="romance">
-          <div class="dorama-thumb-wrapper">
-            <img src="assets/img/filmes/dorama-12.jpg" alt="Dorama em Destaque 12" loading="lazy">
-            <span class="dorama-audio-badge">Dublado & Legendado</span>
-            <span class="dorama-quality-badge">FULL HD</span>
-          </div>
-          <div class="dorama-card-info">
-            <h5 class="dorama-card-title">Sob a Luz da Lua</h5>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Romance épico de época entre um príncipe herdeiro e uma jovem sábia.</p>
-            <div class="dorama-card-meta">
-              <span>⭐ 9.9 / 10</span>
-              <span>Episódios Completos</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Banner de Destaque: Mais de 1.000 Filmes Disponíveis -->
-      <div style="background: var(--gradient-brand-subtle); border: 2px dashed var(--pink-primary); border-radius: var(--radius-xl); padding: 32px 24px; text-align: center; margin-top: 40px; box-shadow: var(--shadow-sm);">
-        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--text-primary); margin-bottom: 8px;">
-          🎬 E MAIS DE 1.000 OUTROS FILMES E DORAMAS NO APLICATIVO!
-        </h3>
-        <p style="font-size: 1rem; color: var(--text-secondary); max-width: 680px; margin: 0 auto 20px;">
-          Esta é apenas uma pequena prévia. Ao garantir seu <strong>Acesso Vitalício por R$ 9,90</strong>, você desbloqueia o catálogo completo com <strong>mais de 1.000 produções</strong> da Coreia do Sul, China, Japão e Tailândia, com novos lançamentos adicionados diariamente!
-        </p>
-        <button onclick="redirectToCheckout()" class="btn btn-primary btn-lg" style="font-size: 1.15rem;">
-          GARANTIR ACESSO AOS MAIS DE 1.000 FILMES POR R$ 9,90
-        </button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Seção Obrigatória: Dispositivos Compatíveis & Condições de Acesso -->
-  <section class="section devices-section" id="dispositivos">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">Compatibilidade & Transparência</span>
-        <h2 class="section-title">Dispositivos Compatíveis e Condições de Acesso</h2>
-        <p class="section-desc">Nosso compromisso é com a clareza total. Saiba exatamente onde e como você poderá desfrutar do DoramaBox.</p>
-      </div>
-
-      <div class="devices-grid">
-        
-        <!-- Celular e Tablet Android -->
-        <div class="device-card">
-          <div class="device-card-header">
-            <div class="device-card-icon">📱</div>
-            <div>
-              <h4>Celulares e Tablets Android</h4>
-              <small style="color: var(--pink-primary); font-weight: 700;">Instalação Nativa Direta (.APK)</small>
-            </div>
-          </div>
-          <p style="font-size: 0.9rem; color: var(--text-secondary);">
-            Aplicativo desenvolvido e otimizado sob medida para o ecossistema Android móvel.
-          </p>
-          <div class="device-card-specs">
-            <div class="spec-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Compatível com Samsung, Xiaomi, Motorola, Realme, LG, etc.</span>
-            </div>
-            <div class="spec-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Android versão 7.0 (Nougat) até as mais recentes (Android 14/15).</span>
-            </div>
-            <div class="spec-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Consumo otimizado de bateria e dados de internet.</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Smart TV & TV Box -->
-        <div class="device-card">
-          <div class="device-card-header">
-            <div class="device-card-icon">📺</div>
-            <div>
-              <h4>Smart TV, TV Box & Fire TV</h4>
-              <small style="color: var(--purple-primary); font-weight: 700;">Tela Grande em Full HD e 4K</small>
-            </div>
-          </div>
-          <p style="font-size: 0.9rem; color: var(--text-secondary);">
-            Assista no conforto do sofá instalando o APK diretamente no seu televisor ou aparelho compatível.
-          </p>
-          <div class="device-card-specs">
-            <div class="spec-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Android TV, Google TV, Mi Box, Fire TV Stick, Chromecast 4.</span>
-            </div>
-            <div class="spec-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Instalação fácil via aplicativo 'Downloader' ou Pen Drive.</span>
-            </div>
-            <div class="spec-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Controle total pelo controle remoto da televisão.</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Computador & Navegador -->
-        <div class="device-card">
-          <div class="device-card-header">
-            <div class="device-card-icon">💻</div>
-            <div>
-              <h4>Computadores & Espelhamento</h4>
-              <small style="color: var(--text-muted); font-weight: 700;">PC Windows / Notebooks</small>
-            </div>
-          </div>
-          <p style="font-size: 0.9rem; color: var(--text-secondary);">
-            Acesso no computador através de emuladores Android ou transmissão do celular para a tela do PC.
-          </p>
-          <div class="device-card-specs">
-            <div class="spec-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Compatível com BlueStacks, LDPlayer ou Windows 11 Subsystem.</span>
-            </div>
-            <div class="spec-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Suporte a Smart View / Cast direto do smartphone Android.</span>
-            </div>
-            <div class="spec-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Instruções detalhadas inclusas na área de suporte.</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Caixa de Condições de Acesso e Eventuais Limitações (Mandatório) -->
-      <div class="limitations-box">
-        <h5>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-          Condições Oficiais de Acesso e Limitações do Serviço
-        </h5>
-        <p>
-          <strong>Modalidade de Pagamento:</strong> Pagamento único de R$ 9,90 com acesso vitalício concedido ao cliente, livre de qualquer taxa mensal, sem renovação automática e sem cobranças adicionais futuras. <br><br>
-          <strong>Requisitos de Conexão:</strong> A reprodução de doramas em qualidade Full HD e 4K requer conexão ativa com a internet (velocidade mínima sugerida de 10 Mbps estável para transmissão sem pausas). <br><br>
-          <strong>Compatibilidade e Limitações:</strong> O aplicativo DoramaBox é distribuído em pacote executável no formato <code>.apk</code> específico para sistemas operacionais <strong>Android</strong>. Dispositivos Apple (iOS / iPhone / iPad) não executam arquivos APK nativamente; clientes iOS podem utilizar recursos de espelhamento ou dispositivos Android secundários. Cada licença adquirida permite até 3 conexões simultâneas ativas na mesma conta.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Seção da Oferta Oficial: Pagamento Único de R$ 9,90 -->
-  <section class="section pricing-section" id="oferta">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">Oferta Especial de Lançamento</span>
-        <h2 class="section-title">ACESSO VITALÍCIO POR APENAS R$ 9,90</h2>
-        <p class="section-desc">Garantia total de pagamento único. Você só paga uma vez e o DoramaBox é seu para sempre.</p>
-      </div>
-
-      <div class="pricing-card-wrapper">
-        <div class="pricing-card-main">
-          
-          <div class="pricing-badge-popular">
-            Melhor Escolha • Sem Mensalidade
-          </div>
-
-          <h3 class="pricing-plan-title">Plano Vitalício Completo DoramaBox</h3>
-          
-          <div class="pricing-old-price">
-            De R$ 97,00 por apenas
-          </div>
-
-          <div class="pricing-amount-block">
-            <span class="pricing-currency">R$</span>
-            <span class="pricing-number">9,90</span>
-            <span class="pricing-period">pagamento único</span>
-          </div>
-
-          <div class="pricing-single-payment-pill">
-            Acesso vitalício • Sem mensalidades ou cobranças recorrentes
-          </div>
-
-          <!-- Lista de Benefícios Inclusos -->
-          <div class="pricing-benefits-list">
-            <div class="pricing-benefit-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span><strong>Acesso vitalício irrestrito</strong> a todo o catálogo de doramas</span>
-            </div>
-            <div class="pricing-benefit-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span><strong>Sem cobranças recorrentes</strong> e sem surpresas na sua fatura</span>
-            </div>
-            <div class="pricing-benefit-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Qualidade de imagem em <strong>Full HD 1080p e 4K Ultra</strong></span>
-            </div>
-            <div class="pricing-benefit-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Áudio Dublado e Legendado em Português (PT-BR)</span>
-            </div>
-            <div class="pricing-benefit-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Download do aplicativo oficial <strong>APK para Celular Android</strong></span>
-            </div>
-            <div class="pricing-benefit-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Instalação em Smart TV, TV Box e Fire TV Stick</span>
-            </div>
-            <div class="pricing-benefit-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Atualizações automáticas contínuas de novos episódios</span>
-            </div>
-            <div class="pricing-benefit-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span><strong>Suporte direto via WhatsApp:</strong> +55 85 8441-4627</span>
-            </div>
-          </div>
-
-          <!-- Botão Principal Obrigatório -->
-          <button onclick="redirectToCheckout()" class="btn btn-primary btn-lg" style="width: 100%; font-size: 1.18rem; padding: 18px 24px;" id="pricingCtaBtn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-            GARANTIR MEU ACESSO VITALÍCIO
-          </button>
-
-          <!-- Selo de Garantia 7 Dias -->
-          <div class="pricing-guarantee-seal">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EC4899" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-            <span>Garantia Incondicional de 7 Dias • Risco Absolutamente Zero</span>
-          </div>
-
-          <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 14px;">
-            Após a confirmação real do pagamento, você será direcionado para a página oficial de download do APK e orientações de instalação.
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Perguntas Frequentes (FAQ) -->
-  <section class="section" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">Tire suas Dúvidas</span>
-        <h2 class="section-title">Perguntas Frequentes sobre o DoramaBox</h2>
-        <p class="section-desc">Tudo o que você precisa saber antes e depois de adquirir seu acesso vitalício.</p>
-      </div>
-
-      <div class="faq-list">
-        
-        <div class="faq-item active">
-          <button class="faq-question">
-            <span>Realmente é um pagamento único de R$ 9,90 sem mensalidades?</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="faq-answer">
-            Sim, com certeza! Você paga somente uma única vez o valor promocional de R$ 9,90 e tem direito ao acesso vitalício do DoramaBox. Não há assinaturas embutidas, nem mensalidades e nenhuma cobrança posterior.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Como recebo o acesso e o APK após o pagamento?</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="faq-answer">
-            Assim que seu pagamento de R$ 9,90 for confirmado pelo sistema do checkout, você é direcionado automaticamente para a nossa página de download e instruções, onde receberá o arquivo APK oficial e o guia passo a passo para instalar no seu celular Android ou Smart TV. Por segurança, o sistema valida a confirmação real do pagamento antes de liberar o arquivo.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Funciona perfeitamente no meu celular Android?</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="faq-answer">
-            Sim! O aplicativo foi desenvolvido nativamente para celulares Android (Samsung, Motorola, Xiaomi, Realme, LG, etc.) com sistema Android versão 7.0 ou superior. É leve, rápido e não sobrecarrega a memória do aparelho.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Posso assistir na minha Smart TV ou TV Box?</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="faq-answer">
-            Sim! O APK pode ser instalado em televisores e aparelhos que contam com o sistema Android TV, Google TV, TV Box Android (Mi Box, MXQ, etc.) e Amazon Fire TV Stick. O passo a passo completo é disponibilizado após a compra.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>O conteúdo disponibilizado é licenciado e autorizado?</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="faq-answer">
-            Sim. O DoramaBox atua de forma transparente disponibilizando conteúdos audiovisuais licenciados e autorizados por meio de parcerias de distribuição e agregação digital, respeitando a legislação de direitos autorais e propriedade intelectual vigente.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>E se eu tiver dificuldades para instalar?</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="faq-answer">
-            Não se preocupe! Contamos com equipe de suporte exclusiva pelo WhatsApp oficial <strong>+55 85 8441-4627</strong> pronta para orientar você em cada etapa da instalação até que tudo esteja funcionando perfeitamente.
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Aviso Legal & Licenciamento de Conteúdo -->
-  <section class="legal-disclaimer-section">
-    <div class="container">
-      <p style="margin-bottom: 8px;">
-        <strong>Aviso Legal & Termos de Uso:</strong> O DoramaBox disponibiliza somente conteúdo audiovisual licenciado ou autorizado para exibição e agregação digital. As marcas comerciais, pôsteres e títulos citados pertencem aos seus respectivos titulares de direitos. O serviço de acesso vitalício concede uso continuado da plataforma mediante o pagamento único de R$ 9,90, condicionado à compatibilidade do dispositivo do usuário e conexão ativa à internet.
-      </p>
-      <p>
-        Para ler nossa política completa de privacidade, termos de conformidade e solicitação de informações, acesse nossos <a href="termos.html">Termos de Uso e Política de Conteúdo Licenciado</a>.
-      </p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        
-        <div class="footer-brand">
-          <h4>DoramaBox Oficial</h4>
-          <p>A sua plataforma definitiva para assistir aos melhores doramas asiáticos no celular Android e na Smart TV com qualidade Full HD e 4K.</p>
-          <div style="margin-top: 16px; font-size: 0.85rem; color: #E2E8F0;">
-            <strong style="color: #EC4899;">Acesso Vitalício:</strong> Pagamento único de R$ 9,90 (sem mensalidades).
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h5>Navegação</h5>
-          <ul>
-            <li><a href="#catalogo">Catálogo de Doramas</a></li>
-            <li><a href="#dispositivos">Dispositivos Compatíveis</a></li>
-            <li><a href="#oferta">Garantir Acesso Vitalício</a></li>
-            <li><a href="download.html">Baixar APK (Área do Cliente)</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h5>Atendimento & Suporte</h5>
-          <ul>
-            <li>
-              <a id="footerWhatsappLink" href="https://wa.me/558584414627" target="_blank" rel="noopener">
-                WhatsApp Oficial: +55 85 8441-4627
-              </a>
-            </li>
-            <li><a href="termos.html">Termos de Uso & Licenciamento</a></li>
-            <li><a href="termos.html#privacidade">Política de Privacidade</a></li>
-            <li><a href="admin.html" style="opacity: 0.5;">Painel do Administrador</a></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="footer-bottom">
-        <div>
-          &copy; 2026 DoramaBox. Todos os direitos reservados.
-        </div>
-        <div>
-          Desenvolvido com padrão visual white, rosa e roxo • 100% Otimizado para Celulares Android
-        </div>
-      </div>
-    </div>
-  </footer>
-
   <!-- ============================================================
-       BARRA FIXA STICKY INFERIOR PARA CELULAR ANDROID (MOBILE)
-       Não obstrui o WhatsApp e garante conversão fácil no celular
+       BOTÃO FLUTUANTE DE WHATSAPP OFICIAL (MANDATÓRIO)
+       Fixo no canto inferior direito
+       Número: +55 85 8441-4627
+       Mensagem codificada:
+       "Olá! Conheci o DoramaBox e gostaria de receber ajuda sobre o aplicativo e o acesso vitalício de R$ 9,90."
        ============================================================ -->
-  <aside class="mobile-bottom-bar" id="mobileBottomBar" aria-label="Oferta Rápida">
-    <div class="mobile-bottom-bar-content">
-      <div class="mobile-price-tag">
-        <small>Acesso Vitalício</small>
-        <strong>R$ 9,90</strong>
-      </div>
-      <button onclick="redirectToCheckout()" class="btn btn-primary" style="padding: 10px 18px; font-size: 0.88rem;">
-        GARANTIR ACESSO
-      </button>
-    </div>
-  </aside>
-
-  <!-- ============================================================
-       BOTÃO FLUTUANTE AUTOMÁTICO DE SUPORTE VIA WHATSAPP (MANDATÓRIO)
-       - Fixo no canto inferior direito de todas as páginas
-       - Número oficial: +55 85 8441-4627
-       - Link codificado com mensagem pré-preenchida obrigatória:
-         "Olá! Conheci o DoramaBox e gostaria de receber ajuda sobre o aplicativo e o acesso vitalício de R$ 9,90."
-       ============================================================ -->
-  <a id="floatingWhatsappBtn" class="whatsapp-floating-widget" href="javascript:void(0)" target="_blank" rel="noopener noreferrer" aria-label="Falar com Suporte no WhatsApp">
-    <div class="whatsapp-tooltip-bubble">
-      <span class="whatsapp-online-dot"></span>
-      <span>Suporte DoramaBox Online</span>
-    </div>
-    <div class="whatsapp-floating-btn">
-      <!-- Ícone Oficial SVG do WhatsApp -->
+  <a id="floatingWhatsappBtn" class="whatsapp-mobile-widget" href="javascript:void(0)" target="_blank" rel="noopener noreferrer" aria-label="Falar com Suporte no WhatsApp">
+    <div class="whatsapp-mobile-btn">
       <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
         <path d="M16.002 2C8.28 2 2 8.28 2 16.002c0 2.65.733 5.13 2.008 7.256L2 30l7.008-1.972A13.93 13.93 0 0 0 16.002 30C23.723 30 30 23.723 30 16.002 30 8.28 23.723 2 16.002 2zm0 25.642c-2.316 0-4.49-.66-6.33-1.808l-.454-.282-4.156 1.17 1.11-4.043-.309-.467A11.583 11.583 0 0 1 4.36 16.002C4.36 9.58 9.58 4.36 16.002 4.36c6.422 0 11.643 5.22 11.643 11.642 0 6.422-5.22 11.642-11.643 11.642zm6.386-8.73c-.35-.175-2.072-1.023-2.393-1.14-.322-.116-.555-.175-.788.176-.233.35-.904 1.14-1.109 1.373-.204.233-.408.263-.758.088-.35-.175-1.478-.545-2.816-1.737-1.042-.929-1.745-2.076-1.95-2.426-.204-.35-.022-.54.153-.714.158-.157.35-.408.525-.612.175-.205.233-.35.35-.584.117-.233.058-.438-.03-.612-.087-.175-.788-1.9-1.08-2.602-.284-.684-.572-.591-.788-.602-.204-.01-.437-.012-.67-.012-.234 0-.613.088-.934.438-.321.35-1.226 1.2-1.226 2.924 0 1.724 1.255 3.39 1.43 3.623.175.234 2.47 3.771 5.983 5.286.836.36 1.488.576 1.996.737.84.266 1.604.229 2.208.139.674-.101 2.072-.847 2.364-1.664.292-.817.292-1.518.204-1.664-.087-.146-.32-.233-.67-.408z"/>
       </svg>
