@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do Administrador - DoramaBox</title>
+  <meta name="robots" content="noindex, nofollow">
+  
+  <!-- Fontes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/img/app-icon.png">
+
+  <style>
+    .admin-wrapper {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .admin-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-light);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .badge-admin {
+      background: var(--pink-light);
+      color: var(--pink-primary);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .order-token-box {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-light);
+      padding: 14px;
+      border-radius: var(--radius-md);
+      font-family: monospace;
+      font-size: 0.9rem;
+      word-break: break-all;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .toast-msg {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #0F172A;
+      color: #FFF;
+      padding: 14px 22px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      z-index: 9999;
+      display: none;
+      font-weight: 600;
+      animation: fadeIn 0.3s ease;
+    }
+  </style>
+</head>
+<body style="background-color: var(--bg-secondary);">
+
+  <div id="toastMessage" class="toast-msg"></div>
+
+  <div class="admin-wrapper">
+    
+    <div class="admin-header">
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <img src="assets/img/app-icon.png" alt="Logo" width="46" height="46" style="border-radius: 12px;">
+        <div>
+          <h2 style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--text-primary);">
+            Painel do Administrador - DoramaBox
+          </h2>
+          <span class="badge-admin">Configurações de Checkout, APK e Suporte</span>
+        </div>
+      </div>
+      <div>
+        <a href="index.html" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.9rem;">
+          Ver Site Principal
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 1: Configuração de Links do Checkout e APK -->
+    <div class="admin-card">
+      <h3 style="font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 8px; color: var(--text-primary);">
+        1. Configurações de Checkout & Download do APK
+      </h3>
+      <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px;">
+        O administrador pode alterar a qualquer momento o link do checkout de pagamento e o link onde o arquivo APK está hospedado.
+      </p>
+
+      <form id="adminSettingsForm" onsubmit="saveAdminSettings(event)">
+        <div class="form-group">
+          <label class="form-label" for="cfgCheckoutUrl">
+            URL do Checkout de Pagamento (R$ 9,90):
+          </label>
+          <input type="url" id="cfgCheckoutUrl" class="form-input" placeholder="https://pay.hotmart.com/... ou Kiwify, Mercado Pago, etc." required>
+          <small class="form-hint">Para onde os botões 'GARANTIR MEU ACESSO VITALÍCIO' redirecionam o cliente.</small>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="cfgApkUrl">
+            URL de Download do Arquivo APK Oficial:
+          </label>
+          <input type="url" id="cfgApkUrl" class="form-input" placeholder="https://seudominio.com/doramabox.apk ou link do Google Drive/CDN" required>
+          <small class="form-hint">Link direto de download do aplicativo oficial para celular Android e TV Box.</small>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-group">
+            <label class="form-label" for="cfgApkVersion">Versão do Aplicativo:</label>
+            <input type="text" id="cfgApkVersion" class="form-input" placeholder="v4.6.2 (Oficial)">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cfgApkSize">Tamanho do APK:</label>
+            <input type="text" id="cfgApkSize" class="form-input" placeholder="38.4 MB">
+          </div>
+        </div>
+
+        <hr style="border: none; border-top: 1px solid var(--border-light); margin: 24px 0;">
+
+        <!-- Card 2: WhatsApp e Mensagens -->
+        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 8px; color: var(--text-primary);">
+          2. Suporte via WhatsApp Oficial
+        </h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px;">
+          Número fixo e mensagens pré-configuradas codificadas para atendimento ao cliente.
+        </p>
+
+        <div class="form-group">
+          <label class="form-label" for="cfgWhatsappNumber">Número de Suporte (DDI + DDD + Telefone):</label>
+          <input type="text" id="cfgWhatsappNumber" class="form-input" value="558584414627" required>
+          <small class="form-hint">Padrão oficial obrigatório: 558584414627 (+55 85 8441-4627).</small>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="cfgWhatsappMainMsg">Mensagem do Botão Flutuante (Todas as Páginas):</label>
+          <textarea id="cfgWhatsappMainMsg" class="form-input" rows="2" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="cfgWhatsappDownloadMsg">Mensagem do Botão de Suporte na Seção de Download:</label>
+          <textarea id="cfgWhatsappDownloadMsg" class="form-input" rows="2" required></textarea>
+        </div>
+
+        <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+          <button type="submit" class="btn btn-primary" style="padding: 14px 28px;">
+            Salvar Todas as Configurações
+          </button>
+          <button type="button" onclick="restoreDefaults()" class="btn btn-secondary">
+            Restaurar Valores Padrão
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Card 3: Gerador de Links de Acesso Direto para Clientes -->
+    <div class="admin-card">
+      <h3 style="font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 8px; color: var(--text-primary);">
+        3. Gerador de Token & Liberação de Clientes
+      </h3>
+      <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 16px;">
+        Quando um cliente comprar pelo checkout manual ou via Pix, você pode gerar um link com token de acesso imediato para enviar para ele no WhatsApp ou e-mail.
+      </p>
+
+      <div style="display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap;">
+        <input type="email" id="newCustomerEmail" class="form-input" placeholder="Digite o e-mail do cliente (ex: cliente@gmail.com)" style="flex: 1; min-width: 260px;">
+        <button onclick="handleGenerateToken()" class="btn btn-primary" style="white-space: nowrap;">
+          Gerar Link do Cliente
+        </button>
+      </div>
+
+      <div id="generatedLinkContainer" style="display: none;">
+        <label class="form-label">Link de Acesso Direto Liberado (Envie para o cliente):</label>
+        <div class="order-token-box">
+          <span id="generatedUrlText"></span>
+          <button onclick="copyGeneratedLink()" class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.8rem;">
+            Copiar Link
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Simulador de Fluxo do Cliente -->
+    <div class="admin-card">
+      <h3 style="font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 8px; color: var(--text-primary);">
+        4. Testar Fluxos do Cliente
+      </h3>
+      <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 16px;">
+        Verifique visualmente como a página se comporta para quem ainda não pagou e para quem teve o pagamento confirmado.
+      </p>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="download.html" target="_blank" class="btn btn-secondary">
+          🔒 Testar Acesso Bloqueado (Sem Pagamento)
+        </a>
+        <a href="download.html?token=DBX-VITALICIO-OK-990" target="_blank" class="btn btn-outline-brand">
+          ✅ Testar Acesso Liberado (Pagamento Aprovado)
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Instruções de Acesso e Download do APK - DoramaBox Oficial</title>
+  <meta name="description" content="Página oficial de instruções de instalação e download do aplicativo APK do DoramaBox para celular Android, Smart TV e TV Box.">
+  <meta name="theme-color" content="#FFFFFF">
+  
+  <!-- Fontes Google Premium -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/img/app-icon.png">
+
+  <style>
+    .install-tab-btn {
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 1px solid var(--border-light);
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .install-tab-btn.active {
+      background: var(--gradient-brand);
+      color: #FFF;
+      border-color: transparent;
+    }
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-banner">
+    <span class="badge-pill">Área Segura</span>
+    <span>DoramaBox Oficial • Instruções de Acesso e Download do APK</span>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" title="Voltar para a página inicial">
+        <img src="assets/img/app-icon.png" alt="Logo DoramaBox" width="38" height="38">
+        <span>Dorama<span class="brand-highlight">Box</span></span>
+      </a>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-secondary" style="padding: 9px 16px; font-size: 0.88rem;">
+          ← Voltar ao Início
+        </a>
+        <a id="headerSupportBtn" href="javascript:void(0)" class="btn btn-whatsapp" style="padding: 9px 16px; font-size: 0.88rem;">
+          Suporte WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero da Página de Download -->
+  <section class="download-page-hero">
+    <div class="container">
+      
+      <!-- ESTADO 1: PAGAMENTO NÃO CONFIRMADO / BLOQUEADO -->
+      <div id="gateBlockedState" style="display: none; max-width: 680px; margin: 0 auto;">
+        <div class="download-status-badge blocked">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          Acesso Restrito: Confirmação de Pagamento Necessária
+        </div>
+        
+        <h1 class="hero-title" style="font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 12px;">
+          Validação de Pagamento do DoramaBox
+        </h1>
+        
+        <p class="hero-subtitle" style="margin: 0 auto 30px;">
+          Para garantir a segurança do serviço e o cumprimento dos termos de acesso vitalício, o download do APK é liberado exclusivamente após a confirmação real do pagamento de R$ 9,90.
+        </p>
+
+        <div class="admin-card" style="text-align: left;">
+          <h4 style="font-family: var(--font-heading); font-size: 1.15rem; margin-bottom: 14px; color: var(--text-primary);">
+            Já realizou o pagamento? Valide seu acesso:
+          </h4>
+          
+          <form id="validateAccessForm" onsubmit="handleValidateForm(event)">
+            <div class="form-group">
+              <label class="form-label" for="clientIdentifier">
+                E-mail da compra ou Código da Transação / Pedido:
+              </label>
+              <input type="text" id="clientIdentifier" class="form-input" placeholder="Ex: seuemail@gmail.com ou DBX-12345" required>
+              <small class="form-hint">Insira o e-mail que você utilizou no momento do checkout de R$ 9,90.</small>
+            </div>
+            
+            <div id="validationFeedback" style="display: none; margin-bottom: 14px; padding: 12px; border-radius: 8px; font-size: 0.9rem;"></div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">
+              VALIDAR E LIBERAR DOWNLOAD DO APK
+            </button>
+          </form>
+
+          <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--border-light); display: flex; flex-direction: column; gap: 12px; text-align: center;">
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">
+              Ainda não garantiu seu acesso vitalício por apenas R$ 9,90?
+            </p>
+            <div>
+              <button onclick="redirectToCheckout()" class="btn btn-outline-brand" style="width: 100%;">
+                GARANTIR ACESSO VITALÍCIO (R$ 9,90)
+              </button>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 6px;">
+              Pagou via Pix ou Boleto e precisa de liberação imediata? <br>
+              <a id="helpValidateWhatsapp" href="javascript:void(0)" style="color: var(--whatsapp-color); font-weight: 700;">
+                Clique aqui para validar diretamente com o suporte no WhatsApp
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESTADO 2: ACESSO VALIDADO COM SUCESSO (LIBERADO) -->
+      <div id="gateApprovedState" style="display: none;">
+        <div class="download-status-badge verified">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Pagamento Confirmado • Acesso Vitalício Ativado
+        </div>
+
+        <h1 class="hero-title" style="font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 10px;">
+          Instruções de Acesso e Download do APK
+        </h1>
+
+        <p class="hero-subtitle" style="margin: 0 auto; max-width: 620px;">
+          Parabéns! Seu acesso vitalício ao DoramaBox está liberado. Baixe o aplicativo oficial para seu celular Android ou configure na sua Smart TV.
+        </p>
+
+        <!-- Caixa Principal de Download com Requisito Obrigatório 3 -->
+        <div class="download-box-card">
+          <div style="width: 72px; height: 72px; margin: 0 auto 16px; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md);">
+            <img src="assets/img/app-icon.png" alt="Ícone DoramaBox" width="72" height="72">
+          </div>
+
+          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--text-primary); margin-bottom: 6px;">
+            DoramaBox Oficial para Celular Android
+          </h3>
+          <p style="font-size: 0.95rem; color: var(--text-secondary);">
+            Pacote executável oficial com reprodução Full HD e 4K sem anúncios.
+          </p>
+
+          <!-- Informações do APK -->
+          <div class="apk-info-strip">
+            <div class="apk-info-pill">📦 Versão: <strong id="apkVersionText">v4.6.2 (Oficial)</strong></div>
+            <div class="apk-info-pill">💾 Tamanho: <strong id="apkSizeText">38.4 MB</strong></div>
+            <div class="apk-info-pill">📱 Sistema: <strong>Android 7.0+</strong></div>
+          </div>
+
+          <!-- Botão Principal Obrigatório: BAIXAR APK -->
+          <div style="margin: 20px 0 10px;">
+            <a id="downloadApkMainBtn" href="javascript:void(0)" onclick="handleApkDownload()" class="btn btn-primary btn-lg" style="width: 100%; font-size: 1.25rem; padding: 18px 28px; box-shadow: var(--shadow-cta);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              BAIXAR APK
+            </a>
+          </div>
+
+          <!-- ============================================================
+               REQUISITO OBRIGATÓRIO 3:
+               Abaixo do botão “BAIXAR APK”, adicionar o texto:
+               “Precisa de ajuda para instalar? Nossa equipe pode orientar você pelo WhatsApp.”
+               Adicionar um botão secundário:
+               “FALAR COM O SUPORTE”.
+               Esse botão deve abrir o mesmo WhatsApp com a mensagem:
+               “Olá! Preciso de ajuda para baixar ou instalar o APK do DoramaBox.”
+               ============================================================ -->
+          <div class="download-support-section">
+            <p class="download-support-text">
+              Precisa de ajuda para instalar? Nossa equipe pode orientar você pelo WhatsApp.
+            </p>
+            <a id="downloadSupportWhatsappBtn" href="javascript:void(0)" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%; max-width: 380px; padding: 14px 24px; font-size: 1rem;">
+              <svg width="20" height="20" viewBox="0 0 32 32" fill="#FFF"><path d="M16.002 2C8.28 2 2 8.28 2 16.002c0 2.65.733 5.13 2.008 7.256L2 30l7.008-1.972A13.93 13.93 0 0 0 16.002 30C23.723 30 30 23.723 30 16.002 30 8.28 23.723 2 16.002 2zm0 25.642c-2.316 0-4.49-.66-6.33-1.808l-.454-.282-4.156 1.17 1.11-4.043-.309-.467A11.583 11.583 0 0 1 4.36 16.002C4.36 9.58 9.58 4.36 16.002 4.36c6.422 0 11.643 5.22 11.643 11.642 0 6.422-5.22 11.642-11.643 11.642zm6.386-8.73c-.35-.175-2.072-1.023-2.393-1.14-.322-.116-.555-.175-.788.176-.233.35-.904 1.14-1.109 1.373-.204.233-.408.263-.758.088-.35-.175-1.478-.545-2.816-1.737-1.042-.929-1.745-2.076-1.95-2.426-.204-.35-.022-.54.153-.714.158-.157.35-.408.525-.612.175-.205.233-.35.35-.584.117-.233.058-.438-.03-.612-.087-.175-.788-1.9-1.08-2.602-.284-.684-.572-.591-.788-.602-.204-.01-.437-.012-.67-.012-.234 0-.613.088-.934.438-.321.35-1.226 1.2-1.226 2.924 0 1.724 1.255 3.39 1.43 3.623.175.234 2.47 3.771 5.983 5.286.836.36 1.488.576 1.996.737.84.266 1.604.229 2.208.139.674-.101 2.072-.847 2.364-1.664.292-.817.292-1.518.204-1.664-.087-.146-.32-.233-.67-.408z"/></svg>
+              FALAR COM O SUPORTE
+            </a>
+          </div>
+
+          <div style="margin-top: 18px; font-size: 0.8rem; color: var(--text-light);">
+            🔒 Arquivo 100% verificado contra malwares • Desenvolvido exclusivamente para DoramaBox
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Seção de Guia Passo a Passo de Instalação no Celular Android -->
+  <section class="section" id="instrucoesInstalacao">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-eyebrow">Guia Passo a Passo</span>
+        <h2 class="section-title">Como Instalar no seu Dispositivo</h2>
+        <p class="section-desc">Instruções simples e ilustradas para você começar a assistir seus doramas em minutos.</p>
+      </div>
+
+      <!-- Abas de Dispositivo -->
+      <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 30px; flex-wrap: wrap;">
+        <button class="install-tab-btn active" onclick="switchInstallTab('tabAndroid')">
+          📱 No Celular Android
+        </button>
+        <button class="install-tab-btn" onclick="switchInstallTab('tabTv')">
+          📺 Na Smart TV / TV Box
+        </button>
+      </div>
+
+      <!-- Conteúdo Aba Celular Android -->
+      <div id="tabAndroid" class="tab-content active">
+        <div class="install-steps-grid">
+          
+          <div class="install-step-card">
+            <div class="step-number">1</div>
+            <h5>Clique em "BAIXAR APK"</h5>
+            <p>Toque no botão principal acima para iniciar o download do arquivo de instalação <code>doramabox.apk</code> no seu celular Android.</p>
+          </div>
+
+          <div class="install-step-card">
+            <div class="step-number">2</div>
+            <h5>Permita Fontes Desconhecidas</h5>
+            <p>No Android, ao abrir o instalador, toque em <strong>Configurações</strong> e ative <strong>"Permitir desta fonte"</strong>. Esse procedimento é padrão do sistema para aplicativos instalados diretamente.</p>
+          </div>
+
+          <div class="install-step-card">
+            <div class="step-number">3</div>
+            <h5>Toque em "Instalar"</h5>
+            <p>Confirme a instalação na tela do seu celular e aguarde alguns segundos até a conclusão da instalação.</p>
+          </div>
+
+          <div class="install-step-card">
+            <div class="step-number">4</div>
+            <h5>Aproveite o Acesso Vitalício!</h5>
+            <p>Abra o DoramaBox pelo ícone no seu menu e tenha acesso imediato a todos os doramas dublados e legendados em Full HD!</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Conteúdo Aba Smart TV / TV Box -->
+      <div id="tabTv" class="tab-content">
+        <div class="install-steps-grid">
+          
+          <div class="install-step-card">
+            <div class="step-number">1</div>
+            <h5>Instale o app "Downloader"</h5>
+            <p>Na loja de aplicativos da sua Smart TV Android ou Fire TV Stick, pesquise pelo aplicativo gratuito <strong>Downloader</strong> com ícone laranja.</p>
+          </div>
+
+          <div class="install-step-card">
+            <div class="step-number">2</div>
+            <h5>Digite o Link de Instalação</h5>
+            <p>Abra o Downloader e digite a URL direta do APK do DoramaBox ou o código numérico disponibilizado pelo nosso suporte.</p>
+          </div>
+
+          <div class="install-step-card">
+            <div class="step-number">3</div>
+            <h5>Conclua a Instalação</h5>
+            <p>Quando o download terminar, o Downloader perguntará se deseja instalar. Selecione <strong>Instalar</strong> e confirme com o controle remoto.</p>
+          </div>
+
+          <div class="install-step-card">
+            <div class="step-number">4</div>
+            <h5>Assistir na Tela Grande</h5>
+            <p>Seus doramas favoritos prontos para maratonar no conforto da sua sala de estar com qualidade de cinema!</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Aviso de Dispositivos e Limitações -->
+      <div class="limitations-box" style="margin-top: 40px;">
+        <h5>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          Requisitos Técnicos do Aplicativo
+        </h5>
+        <p>
+          • <strong>Sistema Mínimo:</strong> Android 7.0 (Nougat) ou superior. <br>
+          • <strong>Conexão Recomendada:</strong> 10 Mbps de velocidade para reprodução contínua em Full HD 1080p. <br>
+          • <strong>Dispositivos com iOS (iPhone):</strong> Não suportam arquivos .APK diretamente. É necessário espelhar a tela ou utilizar dispositivo compatível com Android.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>DoramaBox Oficial</h4>
+          <p>Área de instruções e download do APK oficial. Em caso de dúvidas durante a instalação, acione nosso suporte pelo WhatsApp oficial.</p>
+          <div style="margin-top: 14px; font-size: 0.85rem; color: #E2E8F0;">
+            WhatsApp Oficial: <strong>+55 85 8441-4627</strong>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Links Rápidos</h5>
+          <ul>
+            <li><a href="index.html">Página Principal</a></li>
+            <li><a href="index.html#dispositivos">Dispositivos Compatíveis</a></li>
+            <li><a href="termos.html">Termos de Uso & Licenciamento</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Administração</h5>
+          <ul>
+            <li><a href="admin.html">Painel do Administrador</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 DoramaBox. Todos os direitos reservados.</div>
+        <div>Acesso Vitalício por R$ 9,90 • Sem Mensalidades</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       BOTÃO FLUTUANTE DE WHATSAPP OFICIAL (MANDATÓRIO EM TODAS AS PÁGINAS)
+       Link codificado com mensagem:
+       "Olá! Conheci o DoramaBox e gostaria de receber ajuda sobre o aplicativo e o acesso vitalício de R$ 9,90."
+       ============================================================ -->
+  <a id="floatingWhatsappBtn" class="whatsapp-floating-widget" href="javascript:void(0)" target="_blank" rel="noopener noreferrer" aria-label="Falar com Suporte no WhatsApp">
+    <div class="whatsapp-tooltip-bubble">
+      <span class="whatsapp-online-dot"></span>
+      <span>Suporte DoramaBox Online</span>
+    </div>
+    <div class="whatsapp-floating-btn">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.002 2C8.28 2 2 8.28 2 16.002c0 2.65.733 5.13 2.008 7.256L2 30l7.008-1.972A13.93 13.93 0 0 0 16.002 30C23.723 30 30 23.723 30 16.002 30 8.28 23.723 2 16.002 2zm0 25.642c-2.316 0-4.49-.66-6.33-1.808l-.454-.282-4.156 1.17 1.11-4.043-.309-.467A11.583 11.583 0 0 1 4.36 16.002C4.36 9.58 9.58 4.36 16.002 4.36c6.422 0 11.643 5.22 11.643 11.642 0 6.422-5.22 11.642-11.643 11.642zm6.386-8.73c-.35-.175-2.072-1.023-2.393-1.14-.322-.116-.555-.175-.788.176-.233.35-.904 1.14-1.109 1.373-.204.233-.408.263-.758.088-.35-.175-1.478-.545-2.816-1.737-1.042-.929-1.745-2.076-1.95-2.426-.204-.35-.022-.54.153-.714.158-.157.35-.408.525-.612.175-.205.233-.35.35-.584.117-.233.058-.438-.03-.612-.087-.175-.788-1.9-1.08-2.602-.284-.684-.572-.591-.788-.602-.204-.01-.437-.012-.67-.012-.234 0-.613.088-.934.438-.321.35-1.226 1.2-1.226 2.924 0 1.724 1.255 3.39 1.43 3.623.175.234 2.47 3.771 5.983 5.286.836.36 1.488.576 1.996.737.84.266 1.604.229 2.208.139.674-.101 2.072-.847 2.364-1.664.292-.817.292-1.518.204-1.664-.087-.146-.32-.233-.67-.408z"/>
+      </svg>
+    </div>
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/download.js"></script>
+</body>
+</html>
