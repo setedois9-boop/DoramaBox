@@ -192,36 +192,58 @@
   <section class="section" id="catalogo">
     <div class="container">
       <div class="section-header">
-        <span class="section-eyebrow">Catálogo Completo & Atualizado</span>
-        <h2 class="section-title">Milhares de episódios para maratonar</h2>
-        <p class="section-desc">De romances emocionantes a mistérios eletrizantes, encontre os títulos mais premiados da Ásia.</p>
+        <span class="section-eyebrow">Acervo Gigante com Mais de 1.000 Títulos</span>
+        <h2 class="section-title">Mais de 1.000 Filmes e Doramas para Maratonar</h2>
+        <p class="section-desc">
+          Abaixo você confere apenas uma <strong>pequena amostra</strong> das obras mais queridas. O DoramaBox conta com um acervo completo de <strong>mais de 1.000 filmes, séries e doramas</strong> asiáticos completos, dublados e legendados em português com acesso vitalício por apenas R$ 9,90!
+        </p>
+      </div>
+
+      <!-- Barra de Estatísticas do Acervo (+1.000 Filmes) -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 35px; text-align: center;">
+        <div style="background: var(--pink-light); border: 1.5px solid rgba(236,72,153,0.25); border-radius: var(--radius-md); padding: 18px 14px;">
+          <div style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 900; color: var(--pink-primary); line-height: 1;">+1.000</div>
+          <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-top: 4px;">Filmes & Doramas Completos</div>
+        </div>
+        <div style="background: var(--purple-light); border: 1.5px solid rgba(139,92,246,0.25); border-radius: var(--radius-md); padding: 18px 14px;">
+          <div style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 900; color: var(--purple-primary); line-height: 1;">100%</div>
+          <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-top: 4px;">Dublados & Legendados PT-BR</div>
+        </div>
+        <div style="background: #F0FDF4; border: 1.5px solid #86EFAC; border-radius: var(--radius-md); padding: 18px 14px;">
+          <div style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 900; color: #16A34A; line-height: 1;">4K & FHD</div>
+          <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-top: 4px;">Máxima Qualidade de Cinema</div>
+        </div>
+        <div style="background: #FFFBEB; border: 1.5px solid #FDE68A; border-radius: var(--radius-md); padding: 18px 14px;">
+          <div style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 900; color: #D97706; line-height: 1;">R$ 9,90</div>
+          <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-top: 4px;">Pagamento Único Vitalício</div>
+        </div>
       </div>
 
       <!-- Filtros de Categorias -->
       <div class="catalog-nav-tabs">
-        <button class="catalog-tab active" onclick="filterCatalog('todos')">Todos os Doramas</button>
+        <button class="catalog-tab active" onclick="filterCatalog('todos')">Todos os Títulos</button>
         <button class="catalog-tab" onclick="filterCatalog('romance')">💖 Romances Inesquecíveis</button>
         <button class="catalog-tab" onclick="filterCatalog('dublados')">🇧🇷 100% Dublados</button>
-        <button class="catalog-tab" onclick="filterCatalog('suspense')">⚡ Ação & Suspense</button>
-        <button class="catalog-tab" onclick="filterCatalog('historico')">👑 Épicos & Históricos</button>
+        <button class="catalog-tab" onclick="filterCatalog('acao')">⚡ Ação & Suspense</button>
+        <button class="catalog-tab" onclick="filterCatalog('drama')">🎭 Dramas Emocionantes</button>
       </div>
 
-      <!-- Grid de Posters de Doramas -->
+      <!-- Grid de Posters Reais de Doramas -->
       <div class="dorama-cards-grid" id="doramaCardsGrid">
         
         <!-- Card 1 -->
         <div class="dorama-card" data-category="romance dublados">
           <div class="dorama-thumb-wrapper">
-            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=450&q=80" alt="Pousando no Amor">
+            <img src="assets/img/filmes/dorama-01.jpg" alt="Dorama em Destaque 1" loading="lazy">
             <span class="dorama-audio-badge">Dublado & Legendado</span>
             <span class="dorama-quality-badge">FULL HD</span>
           </div>
           <div class="dorama-card-info">
-            <h5 class="dorama-card-title">Pousando no Amor</h5>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Uma herdeira sul-coreana cai acidentalmente na Coreia do Norte e encontra um amor inesperado.</p>
+            <h5 class="dorama-card-title">Amores Proibidos</h5>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Uma paixão arrebatadora que desafia segredos do passado e intrigas familiares.</p>
             <div class="dorama-card-meta">
-              <span>⭐ 9.8 / 10</span>
-              <span>16 Episódios</span>
+              <span>⭐ 9.9 / 10</span>
+              <span>Episódios Completos</span>
             </div>
           </div>
         </div>
@@ -229,67 +251,67 @@
         <!-- Card 2 -->
         <div class="dorama-card" data-category="romance">
           <div class="dorama-thumb-wrapper">
-            <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=450&q=80" alt="Pretendente Surpresa">
+            <img src="assets/img/filmes/dorama-02.jpg" alt="Dorama em Destaque 2" loading="lazy">
             <span class="dorama-audio-badge">Legendado PT-BR</span>
             <span class="dorama-quality-badge">4K ULTRA</span>
           </div>
           <div class="dorama-card-info">
-            <h5 class="dorama-card-title">Pretendente Surpresa</h5>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Um encontro às cegas disfarçado vira uma hilária e apaixonante história de amor no escritório.</p>
+            <h5 class="dorama-card-title">Destinos Cruzados</h5>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Dois mundos opostos colidem em um romance repleto de emoções e reviravoltas.</p>
             <div class="dorama-card-meta">
-              <span>⭐ 9.6 / 10</span>
-              <span>12 Episódios</span>
+              <span>⭐ 9.8 / 10</span>
+              <span>Episódios Completos</span>
             </div>
           </div>
         </div>
 
         <!-- Card 3 -->
-        <div class="dorama-card" data-category="suspense">
+        <div class="dorama-card" data-category="acao">
           <div class="dorama-thumb-wrapper">
-            <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=450&q=80" alt="A Lição (The Glory)">
+            <img src="assets/img/filmes/dorama-03.jpg" alt="Dorama em Destaque 3" loading="lazy">
             <span class="dorama-audio-badge">Dublado & Legendado</span>
             <span class="dorama-quality-badge">4K ULTRA</span>
           </div>
           <div class="dorama-card-info">
-            <h5 class="dorama-card-title">A Lição (The Glory)</h5>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Uma mulher elabora uma meticulosa vingança contra aqueles que arruinaram sua juventude na escola.</p>
+            <h5 class="dorama-card-title">Legado Secreto</h5>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Conspirações de poder, ação eletrizante e uma busca implacável por justiça.</p>
             <div class="dorama-card-meta">
-              <span>⭐ 9.9 / 10</span>
-              <span>16 Episódios</span>
+              <span>⭐ 9.7 / 10</span>
+              <span>Episódios Completos</span>
             </div>
           </div>
         </div>
 
         <!-- Card 4 -->
-        <div class="dorama-card" data-category="suspense dublados">
+        <div class="dorama-card" data-category="drama dublados">
           <div class="dorama-thumb-wrapper">
-            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=450&q=80" alt="Vincenzo">
+            <img src="assets/img/filmes/dorama-04.jpg" alt="Dorama em Destaque 4" loading="lazy">
             <span class="dorama-audio-badge">Dublado em Português</span>
             <span class="dorama-quality-badge">FULL HD</span>
           </div>
           <div class="dorama-card-info">
-            <h5 class="dorama-card-title">Vincenzo</h5>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Um advogado da máfia italiana volta à Coreia para recuperar ouro escondido e enfrenta um império corrupto.</p>
+            <h5 class="dorama-card-title">Memórias de Outono</h5>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Uma jornada comovente de superação, reconciliação e reencontro com quem se ama.</p>
             <div class="dorama-card-meta">
-              <span>⭐ 9.7 / 10</span>
-              <span>20 Episódios</span>
+              <span>⭐ 9.9 / 10</span>
+              <span>Episódios Completos</span>
             </div>
           </div>
         </div>
 
         <!-- Card 5 -->
-        <div class="dorama-card" data-category="historico romance">
+        <div class="dorama-card" data-category="romance drama">
           <div class="dorama-thumb-wrapper">
-            <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=450&q=80" alt="O Rei Eterno">
+            <img src="assets/img/filmes/dorama-05.jpg" alt="Dorama em Destaque 5" loading="lazy">
             <span class="dorama-audio-badge">Dublado & Legendado</span>
             <span class="dorama-quality-badge">4K ULTRA</span>
           </div>
           <div class="dorama-card-info">
-            <h5 class="dorama-card-title">O Rei Eterno</h5>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Um imperador viaja através de um portal místico para um mundo paralelo e encontra uma destemida detetive.</p>
+            <h5 class="dorama-card-title">Promessa Eterna</h5>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Um pacto feito na infância resiste às barreiras do tempo e da distância.</p>
             <div class="dorama-card-meta">
-              <span>⭐ 9.5 / 10</span>
-              <span>16 Episódios</span>
+              <span>⭐ 9.6 / 10</span>
+              <span>Episódios Completos</span>
             </div>
           </div>
         </div>
@@ -297,27 +319,137 @@
         <!-- Card 6 -->
         <div class="dorama-card" data-category="romance dublados">
           <div class="dorama-thumb-wrapper">
-            <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=450&q=80" alt="Beleza Verdadeira">
+            <img src="assets/img/filmes/dorama-06.jpg" alt="Dorama em Destaque 6" loading="lazy">
             <span class="dorama-audio-badge">Dublado em Português</span>
             <span class="dorama-quality-badge">FULL HD</span>
           </div>
           <div class="dorama-card-info">
-            <h5 class="dorama-card-title">Beleza Verdadeira</h5>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Uma estudante supera o bullying dominando a maquiagem e se envolve com dois garotos populares.</p>
+            <h5 class="dorama-card-title">Corações em Sintonia</h5>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Comédia romântica irresistível com diálogos espirituosos e química apaixonante.</p>
             <div class="dorama-card-meta">
               <span>⭐ 9.8 / 10</span>
-              <span>16 Episódios</span>
+              <span>Episódios Completos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="dorama-card" data-category="acao">
+          <div class="dorama-thumb-wrapper">
+            <img src="assets/img/filmes/dorama-07.jpg" alt="Dorama em Destaque 7" loading="lazy">
+            <span class="dorama-audio-badge">Legendado PT-BR</span>
+            <span class="dorama-quality-badge">4K ULTRA</span>
+          </div>
+          <div class="dorama-card-info">
+            <h5 class="dorama-card-title">A Caçada Noturna</h5>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Tensão do primeiro ao último episódio com agentes de elite e reviravoltas.</p>
+            <div class="dorama-card-meta">
+              <span>⭐ 9.7 / 10</span>
+              <span>Episódios Completos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="dorama-card" data-category="drama romance">
+          <div class="dorama-thumb-wrapper">
+            <img src="assets/img/filmes/dorama-08.jpg" alt="Dorama em Destaque 8" loading="lazy">
+            <span class="dorama-audio-badge">Dublado & Legendado</span>
+            <span class="dorama-quality-badge">FULL HD</span>
+          </div>
+          <div class="dorama-card-info">
+            <h5 class="dorama-card-title">Florescer da Esperança</h5>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">História poética sobre recomeços, cura emocional e a força dos laços afetivos.</p>
+            <div class="dorama-card-meta">
+              <span>⭐ 9.8 / 10</span>
+              <span>Episódios Completos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="dorama-card" data-category="romance dublados">
+          <div class="dorama-thumb-wrapper">
+            <img src="assets/img/filmes/dorama-09.jpg" alt="Dorama em Destaque 9" loading="lazy">
+            <span class="dorama-audio-badge">Dublado em Português</span>
+            <span class="dorama-quality-badge">4K ULTRA</span>
+          </div>
+          <div class="dorama-card-info">
+            <h5 class="dorama-card-title">Encontros do Acaso</h5>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Uma coincidência no metrô transforma completamente a vida de dois estranhos.</p>
+            <div class="dorama-card-meta">
+              <span>⭐ 9.5 / 10</span>
+              <span>Episódios Completos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="dorama-card" data-category="drama">
+          <div class="dorama-thumb-wrapper">
+            <img src="assets/img/filmes/dorama-10.jpg" alt="Dorama em Destaque 10" loading="lazy">
+            <span class="dorama-audio-badge">Legendado PT-BR</span>
+            <span class="dorama-quality-badge">FULL HD</span>
+          </div>
+          <div class="dorama-card-info">
+            <h5 class="dorama-card-title">A Voz do Coração</h5>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Um drama emocionante sobre música, paixão e sonhos inalcançáveis.</p>
+            <div class="dorama-card-meta">
+              <span>⭐ 9.7 / 10</span>
+              <span>Episódios Completos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 11 -->
+        <div class="dorama-card" data-category="acao dublados">
+          <div class="dorama-thumb-wrapper">
+            <img src="assets/img/filmes/dorama-11.jpg" alt="Dorama em Destaque 11" loading="lazy">
+            <span class="dorama-audio-badge">Dublado & Legendado</span>
+            <span class="dorama-quality-badge">4K ULTRA</span>
+          </div>
+          <div class="dorama-card-info">
+            <h5 class="dorama-card-title">Operação Seul</h5>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Perseguições em alta velocidade e mistério criminal pelas ruas de Seul.</p>
+            <div class="dorama-card-meta">
+              <span>⭐ 9.6 / 10</span>
+              <span>Episódios Completos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 12 -->
+        <div class="dorama-card" data-category="romance">
+          <div class="dorama-thumb-wrapper">
+            <img src="assets/img/filmes/dorama-12.jpg" alt="Dorama em Destaque 12" loading="lazy">
+            <span class="dorama-audio-badge">Dublado & Legendado</span>
+            <span class="dorama-quality-badge">FULL HD</span>
+          </div>
+          <div class="dorama-card-info">
+            <h5 class="dorama-card-title">Sob a Luz da Lua</h5>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;">Romance épico de época entre um príncipe herdeiro e uma jovem sábia.</p>
+            <div class="dorama-card-meta">
+              <span>⭐ 9.9 / 10</span>
+              <span>Episódios Completos</span>
             </div>
           </div>
         </div>
 
       </div>
 
-      <div style="text-align: center; margin-top: 40px;">
-        <button onclick="redirectToCheckout()" class="btn btn-primary btn-lg">
-          QUERO ASSISTIR TODOS POR R$ 9,90
+      <!-- Banner de Destaque: Mais de 1.000 Filmes Disponíveis -->
+      <div style="background: var(--gradient-brand-subtle); border: 2px dashed var(--pink-primary); border-radius: var(--radius-xl); padding: 32px 24px; text-align: center; margin-top: 40px; box-shadow: var(--shadow-sm);">
+        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--text-primary); margin-bottom: 8px;">
+          🎬 E MAIS DE 1.000 OUTROS FILMES E DORAMAS NO APLICATIVO!
+        </h3>
+        <p style="font-size: 1rem; color: var(--text-secondary); max-width: 680px; margin: 0 auto 20px;">
+          Esta é apenas uma pequena prévia. Ao garantir seu <strong>Acesso Vitalício por R$ 9,90</strong>, você desbloqueia o catálogo completo com <strong>mais de 1.000 produções</strong> da Coreia do Sul, China, Japão e Tailândia, com novos lançamentos adicionados diariamente!
+        </p>
+        <button onclick="redirectToCheckout()" class="btn btn-primary btn-lg" style="font-size: 1.15rem;">
+          GARANTIR ACESSO AOS MAIS DE 1.000 FILMES POR R$ 9,90
         </button>
       </div>
+
     </div>
   </section>
 
