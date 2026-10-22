@@ -377,32 +377,112 @@ body {
 
 /* Destaque: Mais de 1.000 Filmes & Doramas */
 .movies-counter-card {
-  background: var(--pink-light);
-  border: 1.5px solid rgba(236, 72, 153, 0.25);
-  border-radius: var(--radius-md);
-  padding: 16px;
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+  border: 2px solid var(--pink-primary);
+  border-radius: var(--radius-lg);
+  padding: 18px 14px;
   text-align: center;
+  box-shadow: 0 8px 24px rgba(236, 72, 153, 0.16);
+  position: relative;
+  overflow: hidden;
+}
+
+.movies-counter-badge-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gradient-brand);
+  color: #FFFFFF;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.35);
 }
 
 .movies-counter-number {
   font-family: var(--font-heading);
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   font-weight: 900;
   color: var(--pink-primary);
   line-height: 1;
+  text-shadow: 0 2px 10px rgba(236, 72, 153, 0.25);
 }
 
 .movies-counter-label {
-  font-size: 0.88rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
   font-weight: 800;
   color: var(--text-primary);
   margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .movies-counter-desc {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
-  margin-top: 4px;
+  margin-top: 8px;
+  line-height: 1.45;
+}
+
+.movies-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.movies-stat-pill {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movies-stat-pill strong {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--pink-primary);
+  font-weight: 800;
+}
+
+.movies-stat-pill span {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.catalog-more-banner {
+  background: var(--gradient-soft);
+  border: 1.5px dashed var(--pink-primary);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  text-align: center;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.catalog-more-banner h4 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.catalog-more-banner p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
 }
 
 /* Vitrine de Pôsteres no Formato Celular */
