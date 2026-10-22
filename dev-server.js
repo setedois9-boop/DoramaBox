@@ -21,16 +21,23 @@ const server = http.createServer((req, res) => {
   let reqPath = decodeURI(req.url.split('?')[0]);
   if (reqPath === '/') reqPath = '/index.html';
   
-  const filePath = path.join(ROOT, reqPath);
-  
-  fs.stat(filePath, (err, stats) => {
+  let targetFile = filePath;
+  if (!fs.existsSync(targetFile) || fs.statSync(targetFile).isDirectory()) {
+    if (fs.existsSync(filePath + '.html')) {
+      targetFile = filePath + '.html';
+    } else if (fs.existsSync(path.join(filePath, 'index.html'))) {
+      targetFile = path.join(filePath, 'index.html');
+    }
+  }
+
+  fs.stat(targetFile, (err, stats) => {
     if (err || !stats.isFile()) {
       res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
       res.end('404 Não Encontrado');
       return;
     }
     
-    const ext = path.extname(filePath).toLowerCase();
+    const ext = path.extname(targetFile).toLowerCase();
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
     
     res.writeHead(200, { 'Content-Type': contentType });

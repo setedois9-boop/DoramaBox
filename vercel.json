@@ -1,6 +1,12 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/painel",
+      "destination": "/painel.html"
+    }
+  ],
   "redirects": [
     {
       "source": "/download",
@@ -8,7 +14,7 @@
     },
     {
       "source": "/admin",
-      "destination": "/"
+      "destination": "/painel"
     }
   ]
 }
