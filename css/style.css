@@ -199,25 +199,29 @@ body {
 /* Destaque Promocional Obrigatório */
 .mobile-promo-badge {
   width: 100%;
-  background: var(--gradient-soft);
-  border: 1.5px solid var(--border-brand);
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.12) 0%, rgba(139, 92, 246, 0.12) 100%);
+  border: 2px solid var(--pink-primary);
   border-radius: var(--radius-md);
-  padding: 12px 14px;
+  padding: 14px 16px;
   text-align: center;
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.2);
+  position: relative;
 }
 
 .mobile-promo-badge h3 {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
-  font-weight: 800;
+  font-size: 1.15rem;
+  font-weight: 900;
   color: var(--pink-primary);
   text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .mobile-promo-badge p {
-  font-size: 0.8rem;
+  font-size: 0.84rem;
   color: var(--text-secondary);
-  font-weight: 600;
+  font-weight: 700;
+  margin-top: 3px;
 }
 
 /* ============================================================
@@ -666,6 +670,39 @@ body {
   right: 20px;
   z-index: 999;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-mobile-widget:hover {
+  transform: translateY(-2px);
+}
+
+.whatsapp-badge-label {
+  background: #0F172A;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+.whatsapp-badge-label::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--whatsapp-color);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--whatsapp-color);
 }
 
 .whatsapp-mobile-btn {
