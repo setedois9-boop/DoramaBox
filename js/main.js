@@ -4,6 +4,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   setupWhatsAppLinks();
+  initVslAutoplay();
 });
 
 function setupWhatsAppLinks() {
@@ -26,6 +27,53 @@ function setupWhatsAppLinks() {
   if (modalWhatsapp) {
     modalWhatsapp.href = getWhatsAppUrl("download");
   }
+}
+
+// Inicializar Autoplay Automático do Vídeo VSL
+function initVslAutoplay() {
+  const video = document.getElementById("vslVideo");
+  const unmuteBtn = document.getElementById("vslUnmuteBtn");
+  if (!video) return;
+
+  // Garante muted para cumprir a política estrita de autoplay dos navegadores mobile/desktop
+  video.muted = true;
+  video.playsInline = true;
+
+  const playPromise = video.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      // Caso algum navegador bloqueie até muted autoplay, inicia no primeiro toque na tela
+      const playOnTouch = () => {
+        video.play();
+        window.removeEventListener("touchstart", playOnTouch);
+        window.removeEventListener("click", playOnTouch);
+      };
+      window.addEventListener("touchstart", playOnTouch, { once: true });
+      window.addEventListener("click", playOnTouch, { once: true });
+    });
+  }
+
+  // Ativação do áudio com 1 clique
+  function enableAudio() {
+    video.muted = false;
+    video.volume = 1.0;
+    if (unmuteBtn) {
+      unmuteBtn.style.display = "none";
+    }
+  }
+
+  if (unmuteBtn) {
+    unmuteBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      enableAudio();
+    });
+  }
+
+  video.addEventListener("click", () => {
+    if (video.muted) {
+      enableAudio();
+    }
+  });
 }
 
 function toggleFaq(btn) {
