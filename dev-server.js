@@ -21,6 +21,7 @@ const server = http.createServer((req, res) => {
   let reqPath = decodeURI(req.url.split('?')[0]);
   if (reqPath === '/') reqPath = '/index.html';
   
+  let filePath = path.join(ROOT, reqPath);
   let targetFile = filePath;
   if (!fs.existsSync(targetFile) || fs.statSync(targetFile).isDirectory()) {
     if (fs.existsSync(filePath + '.html')) {
@@ -41,7 +42,7 @@ const server = http.createServer((req, res) => {
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
     
     res.writeHead(200, { 'Content-Type': contentType });
-    fs.createReadStream(filePath).pipe(res);
+    fs.createReadStream(targetFile).pipe(res);
   });
 });
 

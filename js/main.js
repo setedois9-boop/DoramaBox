@@ -27,6 +27,12 @@ function setupWhatsAppLinks() {
   if (modalWhatsapp) {
     modalWhatsapp.href = getWhatsAppUrl("download");
   }
+
+  // 4. Link do Suporte no Banner Inferior
+  const bottomSupport = document.getElementById("bottomSupportLink");
+  if (bottomSupport) {
+    bottomSupport.href = getWhatsAppUrl("download");
+  }
 }
 
 // Inicializar Autoplay Automático do Vídeo VSL
