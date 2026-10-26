@@ -6,9 +6,9 @@
 const CONFIG = {
   // Links de Pagamento & APK (Edite aqui facilmente)
   checkoutUrl: "https://pay.hotmart.com/doramabox-vitalicio", // Seu link de checkout real
-  apkDownloadUrl: "https://download.doramabox.com/doramabox-latest.apk", // Link direto do APK
+  apkDownloadUrl: "DoramaBox (1).apk", // Arquivo APK local oficial
   apkVersion: "v4.6.2 (Oficial Android)",
-  apkSize: "38.4 MB",
+  apkSize: "3.9 MB",
   
   // Oferta
   price: "9,90",
@@ -30,12 +30,13 @@ function getWhatsAppUrl(type = "main") {
 
 // Ação do Botão Único de Download
 function handleSingleDownloadButton() {
+  // Inicia o download do APK diretamente
+  directApkDownload();
+
+  // Exibe o modal com opções adicionais e suporte WhatsApp
   const modal = document.getElementById("downloadActionModal");
   if (modal) {
     modal.classList.add("active");
-  } else {
-    // Se não houver modal, vai direto para o checkout configurado
-    window.location.href = CONFIG.checkoutUrl;
   }
 }
 
@@ -54,17 +55,18 @@ function proceedToCheckout() {
 }
 
 function directApkDownload() {
-  if (CONFIG.apkDownloadUrl && CONFIG.apkDownloadUrl.startsWith("http")) {
-    window.location.href = CONFIG.apkDownloadUrl;
-  } else {
-    // Simulação caso link externo não esteja setado
-    const blob = new Blob(["DoramaBox APK - Arquivo Oficial v4.6.2"], { type: "application/vnd.android.package-archive" });
-    const dummyUrl = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = dummyUrl;
-    a.download = "doramabox-v4.6.apk";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  }
+  const fileName = "DoramaBox (1).apk";
+  const fileUrl = encodeURI(fileName);
+  
+  const a = document.createElement("a");
+  a.href = fileUrl;
+  a.setAttribute("download", fileName);
+  document.body.appendChild(a);
+  a.click();
+  
+  setTimeout(() => {
+    if (a.parentNode) {
+      a.parentNode.removeChild(a);
+    }
+  }, 150);
 }
