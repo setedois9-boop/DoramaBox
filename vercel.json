@@ -3,7 +3,20 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/(.*)\\.apk",
+      "source": "/DoramaBox%20(1).apk",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/vnd.android.package-archive"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=\"DoramaBox (1).apk\""
+        }
+      ]
+    },
+    {
+      "source": "/doramabox.apk",
       "headers": [
         {
           "key": "Content-Type",
@@ -25,7 +38,7 @@
   "redirects": [
     {
       "source": "/download",
-      "destination": "/DoramaBox%20(1).apk"
+      "destination": "/doramabox.apk"
     },
     {
       "source": "/admin",
