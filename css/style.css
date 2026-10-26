@@ -312,6 +312,7 @@ body {
   justify-content: center;
   gap: 10px;
   cursor: pointer;
+  text-decoration: none;
   box-shadow: 0 10px 24px rgba(236, 72, 153, 0.45);
   transition: transform 0.2s, box-shadow 0.2s;
 }

@@ -29,14 +29,16 @@ function getWhatsAppUrl(type = "main") {
 }
 
 // Ação do Botão Único de Download
-function handleSingleDownloadButton() {
-  // Inicia o download do APK diretamente
-  directApkDownload();
-
-  // Exibe o modal com opções adicionais e suporte WhatsApp
+function handleSingleDownloadButton(event) {
+  // Exibe o modal com opções adicionais e suporte WhatsApp sem interferir no download nativo
   const modal = document.getElementById("downloadActionModal");
   if (modal) {
     modal.classList.add("active");
+  }
+
+  // Se chamado programaticamente (sem link <a> com href)
+  if (!event || !event.target || !event.target.closest("a[download]")) {
+    directApkDownload(event);
   }
 }
 
@@ -54,12 +56,12 @@ function proceedToCheckout() {
   }
 }
 
-function directApkDownload() {
+function directApkDownload(event) {
   const fileName = "DoramaBox (1).apk";
-  const fileUrl = encodeURI(fileName);
-  
+  const downloadUrl = "doramabox.apk";
+
   const a = document.createElement("a");
-  a.href = fileUrl;
+  a.href = downloadUrl;
   a.setAttribute("download", fileName);
   document.body.appendChild(a);
   a.click();
